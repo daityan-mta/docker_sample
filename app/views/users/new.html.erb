@@ -1,0 +1,75 @@
+<div class="clearfix"></div>
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+<div class="notifications"></div>
+<div class="container-fiuld user">
+  <div class="row">
+    <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
+      <ul>
+        <li>
+          <a href="/users/account">アカウント</a>
+        </li>
+        <li class="active">
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
+      <ul>
+        <li class=""><%= link_to "アカウント" %></li>
+        <li class="active"><a href="/users/profile">プロフィール</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>プロフィール</h5>
+          </div>
+        </div>
+        <form class="edit_user" id="edit_user_716" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <input type="hidden" name="authenticity_token" value="KuBk2Wp5X68FvEs6iZ5IYbdroDBLTfMBtJ6h4YARZhPtypXr02ElGvvEuL+y/V6HUxv0GS8uoKh+5VVlQX6euA==">
+          <div class="update-content">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <div class="icon-box">
+                  <%= form_for @users, url: profile_users_path, methods: :patch do |f| %>
+                  <% if @users.image != nil %>
+                    <%= image_tag attachment_url(@users, :image, :fill, 60, 60),class: "user-icon" %>
+                  <% else %>
+                    <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg",class: "user-icon2" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :image , "アイコン画像" %>
+              <%= f.attachment_field :image %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :name ,"名前" %>
+              <%= f.text_field :name%>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :introduction ,"自己紹介" %>
+              <%= f.text_area :introduction ,placeholder:"自己紹介を入力"%>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.submit "更新"%>
+            </div>
+          </div>
+                 <% end %>

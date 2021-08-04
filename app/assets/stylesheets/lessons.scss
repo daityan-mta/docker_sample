@@ -1,0 +1,49 @@
+// Place all the styles related to the lessons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.whole{
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  height: 350px; 
+}
+#container {
+  width: 500px;
+  margin: 65px auto;
+}
+h1, ul > li {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+h1 {
+  padding: 10px;
+  height: 60px;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+ul {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+ul > li {
+  margin-bottom: 7px;
+  padding: 7px 10px;
+  cursor: pointer;
+  height: 40px
+}
+#btn {
+  text-align: center;
+  float: right;
+  width: 100px;
+  padding: 7px;
+  color: #fff;
+  border-radius: 5px;
+  background: #00aaff;
+  box-shadow: 0 4px 0 #0088cc;
+  cursor: pointer;
+  font-size: 14px;
+}
+#btn.disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,103 @@
+<section class="hero is-medium is-bold" style="background-color: #CAE5CD;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="is-flex-tablet justify-content-center align-items-center">
+        <ul>
+          <li>
+            <h1 class="m-3 add-font-bold is-size-2">
+              Vim特化の学習サイト
+            <br>
+              VIMATE
+            </h1>
+          </li><li class="add-font-bold">
+            <h2 class="subtitle"></h2>
+            ゲーム形式でVimを学びましょう。</li>
+          <li>
+            <a class="button is-info has-text-weight-bold w-50 is-medium mt-4 text-decoration-none" href="users/sign_in">ユーザー登録
+            </a>
+          </li>
+          <li>
+            <a class="button is-primary w-50 text-decoration-none mt-4" href="/lessons">すぐにレッスンを受講</a>
+            <small class="form-text text-muted mt-2 is-hidden-tablet">※レッスンはPC専用です。</small>
+            <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small>
+          </li>
+        </ul>
+        <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '250', :height => '250' %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="column is-8 is-offset-2 my-5 has-text-centered">
+    <h2 class="title mb-5 add-font-regular">Ciscoへの道を歩もう</h2>
+    <p class="subtitle add-font-bold">VIMATEで0からVimmerへの最短距離を歩みましょう。</p>
+  </div>
+  <div class="columns my-5">
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <a href="/lessons/cisco-01/new">
+              <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+            </a>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">
+              <a class="has-text-grey-darker" href="/lessons/vimmer-01">初級編</a>
+            </h4>
+            <p>
+              Vimmer診断初級編は、上下左右の基本的なコマンドを使用して、迷路を突破します。Vim初心者の方からVimmerまで幅広く遊べる内容です。Vimmer診断で、自分のVimmer力を測ってみましょう！
+            </p>
+            <p>
+              <%= link_to "Vim初級編はこちら", class:"button is-info w-100 mt-2 text-decoration-none" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">中級編</h4>
+            <p>Vim中級編はテキストオブジェクトや検索などのコマンドが出題されます。初級編と同様、コマンド一覧やコマンド表示モードが使用可能です。中級編までマスターすれば、Vimでの操作が楽しくなってくるはずです！</p>
+            <%= link_to "中級編はこちら", class:"button is-info w-100 mt-2 text-decoration-none " %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">Vimmer診断上級編</h4>
+            <p>Vim上級編はテキストオブジェクトや検索などのコマンドが出題されます。初級編と同様、コマンド一覧やコマンド表示モードが使用可能です。中級編までマスターすれば、Vimでの操作が楽しくなってくるはずです！</p>
+            <%= link_to "Vim上級編はこちら" ,class:"button is-info w-100 mt-2 text-decoration-none "%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-8 is-offset-2 my-5 has-text-centered">
+    <h2 class="title mb-5 add-font-regular">ゲーム感覚でVimを学ぶ</h2>
+    <p class="subtitle add-font-bold">大将を目指して、ランクアップしましょう。</p>
+      <%= image_tag asset_path("goal.jpg") ,class: "panel-image-third"%>
+    <p class="subtitle add-font-bold mt-5">Vimmerへの道をかけ登りましょう！</p>
+      <%= image_tag asset_path("suii.jpg") ,class: "panel-image-fourth"%>
+    <button class="btn btn-secondary" onclick="location.href='/users/sign_up'">ユーザー登録はこちら</button>
+  </div>
+</section>
+
+
