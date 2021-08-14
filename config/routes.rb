@@ -1,26 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # 静的ページの設定
   get 'help', to: 'static_pages#help'
   get 'privacy', to: 'static_pages#privacy'
   get 'terms', to: 'static_pages#terms'
   get 'inquiries/new'
   resources :top
-
+  resources :lessons, only: [:show, :update, :new, :create]
+  
   # トップページ設定
   get "/" => "top#index"
 
   # lessonsのパス設定
-  get "lessons", to: 'lessons#show', as: :lessons
-  get "lessons/network-01/reference", to: 'lessons/network01#index'
-  get "lessons/network-02/reference", to: 'lessons/network02#index'
-  get "lessons/network-03/reference", to: 'lessons/network03#index'
-  get "lessons/network-01/exam", to: 'lessons/network01#show'
-  get "lessons/network-02/exam", to: 'lessons/network02#show'
-  get "lessons/network-03/exam", to: 'lessons/network03#show'
+  get "lessons", to: 'lessons#index'
+  get "lessons/batch/reference", to: 'lessons/batchs#index'
+  get "lessons/network/reference", to: 'lessons/networks#index'
+  get "lessons/json/reference", to: 'lessons/jsons#index'
+  get "lessons/batch/exam", to: 'lessons/batchs#show'
+  get "lessons/network/exam", to: 'lessons/networks#show'
+  get "lessons/json/exam", to: 'lessons/jsons#show'
 
-  resources :lessons do
-    resources :cisco ,module:'lessons'
-  end
 
   # inquiriesのパス設定
   get "inquiries/new", to: 'inquiries#new', as: :new_inquiries

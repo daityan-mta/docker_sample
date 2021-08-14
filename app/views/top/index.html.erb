@@ -5,53 +5,52 @@
         <ul>
           <li>
             <h1 class="m-3 add-font-bold is-size-2">
-              Vim特化の学習サイト
-            <br>
-              VIMATE
+              エンジニアのためのコアな<br>学習サイト
             </h1>
-          </li><li class="add-font-bold">
-            <h2 class="subtitle"></h2>
-            ゲーム形式でVimを学びましょう。</li>
+          </li>
           <li>
-            <a class="button is-info has-text-weight-bold w-50 is-medium mt-4 text-decoration-none" href="users/sign_in">ユーザー登録
+            <% unless user_signed_in? %>
+              <a class="button is-info has-text-weight-bold w-50 is-medium mt-4 text-decoration-none" href="users/sign_in">ユーザー登録
+            <% end %>
             </a>
           </li>
           <li>
             <a class="button is-primary w-50 text-decoration-none mt-4" href="/lessons">すぐにレッスンを受講</a>
             <small class="form-text text-muted mt-2 is-hidden-tablet">※レッスンはPC専用です。</small>
-            <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small>
+            <% unless user_signed_in? %>
+              <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small>
+            <% end %>
           </li>
         </ul>
-        <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '250', :height => '250' %>
+        <%= image_tag asset_path("job_programmer.jpg"), :width => '250', :height => '250' %>
       </div>
     </div>
   </div>
 </section>
 <section class="container">
   <div class="column is-8 is-offset-2 my-5 has-text-centered">
-    <h2 class="title mb-5 add-font-regular">Ciscoへの道を歩もう</h2>
-    <p class="subtitle add-font-bold">VIMATEで0からVimmerへの最短距離を歩みましょう。</p>
+    <h2 class="title mb-5 add-font-regular">ネットワークエンジニア業務に関する問題系</h2>
   </div>
   <div class="columns my-5">
     <div class="column is-4">
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <a href="/lessons/cisco-01/new">
-              <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+            <a href="lessons/network/exam">
+              <%= image_tag asset_path("network.jpg") %>
             </a>
           </figure>
         </div>
         <div class="card-content">
           <div class="content">
             <h4 class="add-font-bold">
-              <a class="has-text-grey-darker" href="/lessons/vimmer-01">初級編</a>
+              <a class="has-text-grey-darker" href="lessons/network/exam">ネットワーク機器に関する問題</a>
             </h4>
             <p>
-              Vimmer診断初級編は、上下左右の基本的なコマンドを使用して、迷路を突破します。Vim初心者の方からVimmerまで幅広く遊べる内容です。Vimmer診断で、自分のVimmer力を測ってみましょう！
+              ネットワークの設計図で出てくる機器のアイコンに関する問題です(Ciscoアイコン)。設計、監視・運用業務でネットワークの設計図を見ることは多いと思われます。未経験の方には参考になると思われますので、ぜひトライしてみましょう！
             </p>
             <p>
-              <%= link_to "Vim初級編はこちら", class:"button is-info w-100 mt-2 text-decoration-none" %>
+              <%= link_to "ネットワーク機器に関する問題",lessons_network_exam_path, class:"button is-info w-100 mt-2 text-decoration-none" %>
             </p>
           </div>
         </div>
@@ -61,14 +60,20 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+            <a href="lessons/json/exam">
+              <%= image_tag asset_path("json.jpg") %>
+            </a>
           </figure>
         </div>
         <div class="card-content">
           <div class="content">
-            <h4 class="add-font-bold">中級編</h4>
-            <p>Vim中級編はテキストオブジェクトや検索などのコマンドが出題されます。初級編と同様、コマンド一覧やコマンド表示モードが使用可能です。中級編までマスターすれば、Vimでの操作が楽しくなってくるはずです！</p>
-            <%= link_to "中級編はこちら", class:"button is-info w-100 mt-2 text-decoration-none " %>
+            <h4 class="add-font-bold">
+              <a class="has-text-grey-darker" href="lessons/network/exam">Zabbixで使われるJSON問題編</a>
+            </h4>
+            <p>
+              Zabbixとは主に運用・監視業務で使われる、システムの監視を自動化するツールのこと。Zabbix API(ZabbixのWeb管理画面で行ったさまざまな操作を管理画面を使用せずに行える)によって、JSON形式でデータのやり取りができる。(恐らくネットワークエンジニアでもプログラムが書ける人しか使わないと思われる)
+            </p>
+            <%= link_to "問題編", lessons_json_exam_path, class:"button is-info w-100 mt-2 text-decoration-none " %>
           </div>
         </div>
       </div>
@@ -77,26 +82,97 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <%= image_tag asset_path("img_tokyo-min.jpg"), :width => '1280', :height => '960' %>
+            <%# <a href="lessons/json/exam"> %>
+              <%= image_tag asset_path("no_image.jpg") %>
+            </a>
           </figure>
         </div>
         <div class="card-content">
           <div class="content">
-            <h4 class="add-font-bold">Vimmer診断上級編</h4>
-            <p>Vim上級編はテキストオブジェクトや検索などのコマンドが出題されます。初級編と同様、コマンド一覧やコマンド表示モードが使用可能です。中級編までマスターすれば、Vimでの操作が楽しくなってくるはずです！</p>
-            <%= link_to "Vim上級編はこちら" ,class:"button is-info w-100 mt-2 text-decoration-none "%>
+            <h4 class="add-font-bold">募集中</h4>
+            <p>
+            お問い合わせフォームからお願いします
+            </p>
+            <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="column is-8 is-offset-2 my-5 has-text-centered">
+    <h2 class="title mb-5 add-font-regular">プログラミング系</h2>
+  </div>
+  <div class="columns my-5">
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <a href="/lessons/vimmer-01">
+              <%= image_tag asset_path("batchfile.jpg")%>
+            </a>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">
+              <a class="has-text-grey-darker" href="lessons/batch/exam">バッチファイル問題編</a>
+            </h4>
+            <p>
+              バッチファイルとは、コマンドプロンプトやパワーシェルで実行できるコマンド列を記述したテキストファイルのこと。処理を自動化することができる。
+            </p>
+            <p>
+              <%= link_to "バッチファイル問題編",lessons_batch_exam_path, class:"button is-info w-100 mt-2 text-decoration-none" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <%= image_tag asset_path("no_image.jpg") %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">募集中</h4>
+            <p>お問い合わせフォームから<br>お願いします</p>
+            <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4">
+      <div class="card has-text-centered">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <%= image_tag asset_path("no_image.jpg") %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="add-font-bold">募集中</h4>
+            <p>お問い合わせフォームから<br>お願いします</p>
+            <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="column is-8 is-offset-2 my-5 has-text-centered">
     <h2 class="title mb-5 add-font-regular">ゲーム感覚でVimを学ぶ</h2>
     <p class="subtitle add-font-bold">大将を目指して、ランクアップしましょう。</p>
       <%= image_tag asset_path("goal.jpg") ,class: "panel-image-third"%>
     <p class="subtitle add-font-bold mt-5">Vimmerへの道をかけ登りましょう！</p>
       <%= image_tag asset_path("suii.jpg") ,class: "panel-image-fourth"%>
-    <button class="btn btn-secondary" onclick="location.href='/users/sign_up'">ユーザー登録はこちら</button>
+    <% if user_signed_in? %>
+    <% else %>
+      <button class="btn btn-secondary" onclick="location.href='/users/sign_up'">ユーザー登録はこちら</button>
+    <% end %>
   </div>
 </section>
 

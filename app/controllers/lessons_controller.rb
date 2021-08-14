@@ -14,6 +14,13 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # @question = Question.find(params[:content])
+    # @lesson_id = Question.find(params[:lesson_id])
+    @questions = Question.where(lesson_id: params[:id], id: "6")
+    # @questions = Question.where(lesson_id: params[:id])
+    @choices = Choice.where(question_id:"6")
+
+    @lesson = Lesson.find(params[:id])
   end
 
   def edit
