@@ -1,0 +1,93 @@
+<div class="container my-4">
+  <h1 class="title has-text-centered is-hidden-mobile">ネットワーク機器一覧</h1>
+  <h1 class="title has-text-centered is-size-4 is-hidden-tablet">ネットワーク機器一覧</h1>
+  <div class="row">
+    <div class="column is-6 is-offset-3">
+      <table class="table is-hoverable">
+        <thead>
+          <tr>
+            <th class="is-hidden-mobile" scope="col">参考資料</th>
+            <th class="is-hidden-mobile" scope="col">説明</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("レイヤー画像.jpg"), :width => '300', :height => '300' %><br>(出典：http://atnetwork.info/)</td>
+          <td class="has-text-weight-semibold">階層別のネットワーク機器</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("マルチレイヤ.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("maltilayer.jpg"), :width => '100', :height => '100' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">マルチレイヤー</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("スイッチ.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("switch.jpg"), :width => '100', :height => '100' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">スイッチ</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("real_hab.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("hub.jpg"), :width => '100', :height => '100' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">スイッチングハブ</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("real_modem.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("modem.jpg"), :width => '100', :height => '100' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">モデム</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("RealAP.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("AP.jpg"), :width => '110', :height => '110' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">アクセスポイント</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("クラウド.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("cloud.jpg"), :width => '110', :height => '110' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">クラウド</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("ファイアウォール.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("firewall.jpg"), :width => '110', :height => '110' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">ファイアウォール</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("real_ONU.jpg"), :width => '220', :height => '220' %><%= image_tag asset_path("onu.jpg"), :width => '110', :height => '110' ,class:"device_figure"%></td>
+          <td class="has-text-weight-semibold">ONU(光終端装置)</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("malti-single_mode.jpg"), :width => '240', :height => '250' %></td>
+          <td class="has-text-weight-semibold">シングルモード・マルチモード</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><%= image_tag asset_path("medicon.jpg"), :width => '240', :height => '250' %></td>
+          <td class="has-text-weight-semibold">メディアコンバータ</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column is-6 is-offset-3 has-text-centered">
+      <a class="button is-primary is-outlined is-rounded text-decoration-none" data-turbolinks="false" href="/lessons/network-02/exam">
+        <span class="mr-1">
+          <svg class="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor" d="M48 32h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48zm140.485 355.515l123.029-123.029c4.686-4.686 4.686-12.284 0-16.971l-123.029-123.03c-7.56-7.56-20.485-2.206-20.485 8.485v246.059c0 10.691 12.926 16.045 20.485 8.486z"></path>
+          </svg><!-- <i class="fas fa-caret-square-right"></i> Font Awesome fontawesome.com -->
+        </span>Vim中級編はこちら
+      </a>
+    </div>
+  </div>
+</div>

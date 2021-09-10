@@ -1,0 +1,10 @@
+<h1><%= question.content %></h1>
+<%= @correctness %>
+<% choices.each.with_index(1) do |choice, index| %>
+  <% if choice.image_path.present? %>
+    <ul>
+      <li class="answer"><%= image_tag asset_path(choice.image_path), :width => '220', :height => '220' %></li>
+    </ul>
+  <% end %>
+<%= button_to "選択肢#{index}", {controller: 'lessons', action: 'check'}, {remote: true, params: {choice_id: choice.id, question_id: choice.question_id, answered: answered }} %>
+<% end %>

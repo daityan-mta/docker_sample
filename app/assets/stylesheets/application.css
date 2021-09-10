@@ -2033,7 +2033,10 @@ a.box:active {
 
 .image.is-1by1 .has-ratio,.image.is-1by1 img,.image.is-1by2 .has-ratio,.image.is-1by2 img,.image.is-1by3 .has-ratio,.image.is-1by3 img,.image.is-2by1 .has-ratio,.image.is-2by1 img,.image.is-2by3 .has-ratio,.image.is-2by3 img,.image.is-3by1 .has-ratio,.image.is-3by1 img,.image.is-3by2 .has-ratio,.image.is-3by2 img,.image.is-3by4 .has-ratio,.image.is-3by4 img,.image.is-3by5 .has-ratio,.image.is-3by5 img,.image.is-4by3 .has-ratio,.image.is-4by3 img,.image.is-4by5 .has-ratio,.image.is-4by5 img,.image.is-5by3 .has-ratio,.image.is-5by3 img,.image.is-5by4 .has-ratio,.image.is-5by4 img,.image.is-9by16 .has-ratio,.image.is-9by16 img,.image.is-16by9 .has-ratio,.image.is-16by9 img,.image.is-square .has-ratio,.image.is-square img {
   height: 100%;
-  width: 100%
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20px;
 }
 
 .image.is-1by1,.image.is-square {
@@ -2499,7 +2502,7 @@ a.box:active {
 
 .table td,.table th {
   border: solid #dbdbdb;
-  border-width: 0 0 1px;
+  /* border-width: 0 0 1px; */
   padding: .5em .75em
 }
 
@@ -2626,7 +2629,7 @@ a.box:active {
 }
 
 .table tbody tr:last-child td,.table tbody tr:last-child th {
-  border-bottom-width: 0
+  /* border-bottom-width: 0 */
 }
 
 .table.is-bordered td,.table.is-bordered th {
@@ -11222,7 +11225,7 @@ a.has-text-danger-dark:focus,a.has-text-danger-dark:hover {
 
 @media print,screen and (min-width: 769px) {
   .hero.is-medium .hero-body {
-      padding:9rem 1.5rem
+      /* padding:9rem 1.5rem */
   }
 }
 
@@ -11475,7 +11478,7 @@ a {
 
 a:hover {
   color: #0056b3;
-  text-decoration: underline
+  /* text-decoration: underline */
 }
 
 a:not([href]):not([class]),a:not([href]):not([class]):hover {
@@ -11653,7 +11656,7 @@ template {
 }
 
 .h1,h1 {
-  font-size: 2.5rem
+  font-size: 2rem
 }
 
 .h2,h2 {
@@ -11860,7 +11863,9 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px
+  margin-left: -15px;
+  margin-bottom: 20px;
+  margin-top: -40px;
 }
 
 .no-gutters {
@@ -14466,7 +14471,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 }
 
 .dropdown-menu.show {
-  display: block
+  /* display: block */
 }
 
 .dropdown-header {
@@ -19029,7 +19034,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
 }
 
 .mb-5,.my-5 {
-  margin-bottom: 3rem!important
+  /* margin-bottom: 3rem!important */
 }
 
 .ml-5,.mx-5 {

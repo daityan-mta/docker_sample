@@ -1,0 +1,171 @@
+<div class="container my-4">
+  <h1 class="title has-text-centered is-hidden-mobile">json問題集</h1>
+  <h1 class="title has-text-centered is-size-4 is-hidden-tablet">Vim初級編 コマンド一覧</h1>
+  <div class="row">
+    <div class="column is-6 is-offset-3">
+      <table class="table is-hoverable">
+        <thead>
+          <tr>
+            <th class="is-hidden-mobile" scope="col"></th>
+            <th class="is-hidden-mobile" scope="col">コマンド</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">Zabbix</td>
+          <td class="has-text-weight-semibold">「Zabbix」とは保守・監視業務で使うツール。json形式で<br>「ホストの情報」であったり、イベント情報(障害が起こったり、<br>障害から復旧したりするときの情報)のデータのやり取りをする。</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">{“キー” : “値”}、</td>
+          <td class="has-text-weight-semibold">jsonでは「キー」と「値」を指定して記述する。指定する際は「ダブルクォテーション」で囲む。</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">{“key1” : “value1”,<br> “key2” : “value2”}</td>
+          <td class="has-text-weight-semibold">２つ指定する際は「、」で区切る</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">"jsonrpc":"2.0"</td>
+          <td class="has-text-weight-semibold">JSON-RPC(プロトコル)とはZabbixのAPIを呼び出すためのものであり、JSON-RPCのバージョンが2.0という意味である</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">"method": "host.get"</td>
+          <td class="has-text-weight-semibold">host.getで指定したパラメーターを取得できる。詳しくは次のURLを参照　<br><%= link_to 'こちら', 'https://www.zabbix.com/documentation/current/manual/api/reference/host/get' %></td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">"method": "event.get"</td>
+          <td class="has-text-weight-semibold">イベントに関する情報(障害が起こったり、障害から復旧したりするときの情報)を取得する。詳しくは次のURLを参照<br><%= link_to 'こちら', 'https://www.zabbix.com/documentation/current/manual/api/reference/event/get' %></td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><xmp>
+          {
+              "jsonrpc": "2.0",
+              "method": "host.get",
+              "params": {
+                    "filter": {
+                        "host": [
+                            "Zabbix server",
+                            "Linux server"
+                        ]
+                     }
+            },
+            "auth": "038e1d7b1735c6a
+            5436ee9eae095879e",
+            "id": 1
+          }</xmp>
+          </td>
+          <td class="has-text-weight-semibold"><br><br><br><br><br><br>「host」はホスト名のことをさす。「filter」は「ホスト名」の"Zabbix server"・"Linux server"の両方のデータが抽出されるようになるということである。「auth」は認証キーのことを指し、「id」は識別子のことでどんな数字でもOK。</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold"><pre>
+        {
+            "jsonrpc": "2.0",
+            "method": "event.get",
+            "params": {
+                "output": "extend",
+                "select_acknowledges": "extend",
+                "selectTags": "extend",
+                "selectSuppressionData": "extend",
+                "objectids": "13926",
+                "sortfield": ["clock", "eventid"],
+                "sortorder": "DESC"
+            },
+            "auth": "038e1d7b1735c6a5436
+            ee9eae095879e",
+            "id": 1
+        }</xmp></td>
+          <td class="has-text-weight-semibold"><br><br><br><br><br>「"output": "extend"」・・・返されたオブジェクトプロパティを出力するということを指します。<br>
+          "select_acknowledges": "extend"・・・select_acknowledgesとは「acknowledgesイベント」の更新時にプロパティを返すということです。<br>
+          "selectTags": "extend"・・・selectTagsとはtagsイベントタグ付きのプロパティを返します。<br>
+          "sortfield": ["clock", "eventid"]・・・sortfieldとは任意の値によって結果を選別することを指す。
+          "sortorder": "DESC"・・・DESCは下降（descent）のこと。返ってきた結果の値によって変わる。</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td class="has-text-weight-semibold">上にカーソル移動</td>
+          <td class="has-text-weight-semibold">k</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column is-6 is-offset-3 has-text-centered">
+      <a class="button is-primary is-outlined is-rounded text-decoration-none" data-turbolinks="false" href="/lessons/network-02/exam">
+        <span class="mr-1">
+          <svg class="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor" d="M48 32h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48zm140.485 355.515l123.029-123.029c4.686-4.686 4.686-12.284 0-16.971l-123.029-123.03c-7.56-7.56-20.485-2.206-20.485 8.485v246.059c0 10.691 12.926 16.045 20.485 8.486z"></path>
+          </svg><!-- <i class="fas fa-caret-square-right"></i> Font Awesome fontawesome.com -->
+        </span>Vim中級編はこちら
+      </a>
+    </div>
+  </div>
+</div>

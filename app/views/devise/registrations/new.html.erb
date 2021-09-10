@@ -1,29 +1,73 @@
-<h2>Sign up</h2>
+<div class="container my-4">
+  <h1 class="title has-text-centered">ユーザー登録</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+  <div class="row">
+    <div class="column is-6 is-offset-3">
+      <form action="/users" accept-charset="UTF-8" method="post">
+      <input type="hidden" name="authenticity_token" value="VCc7LXKJTgIhC15WPIaEtvIe+r5Esnjmpn40Ek48fz2kIA1PmEDtbOPbyCerRCAhUYxl9sKes1HG1TSX5QKgqw==">
+      <div class="field">
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="badge badge-danger mr-2 mb-2">必須</div>
+            <%= f.label :name,"ユーザー名", {class: "label"} %><br />
+          </div>
+          <div class="control">
+            <%= f.text_field :name, autofocus: true, autocomplete: "user_name" ,class: "input" %>
+            <%# <input class="input" type="text" name="user[name]" id="user_name"> %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="badge badge-danger mr-2 mb-2">必須</div>
+              <%= f.label :email,"メールアドレス", {class: "label"} %><br />
+            </div>
+            <div class="control">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "input" %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="d-flex justify-content-start align-items-center">
+              <div class="badge badge-danger mr-2 mb-2">必須</div>
+                <%= f.label :password,"パスワード", {class: "label"} %><br />
+              </div>
+              <div class="control">
+                <%= f.password_field :password, autocomplete: "new-password" ,class: "input" %>
+                <small class="form-text text-muted">※半角英小文字・英大文字・数字を組み合わせ、8文字以上で入力してください。</small>
+              </div>
+            </div>
+            <div class="field">
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="badge badge-danger mr-2 mb-2">必須
+                </div>
+                <%= f.label :password_confirmation,"パスワード確認用", {class: "label"} %><br />
+              </div>
+            <div class="control">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "input" %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="d-flex justify-content-start align-items-center">
+              <input name="user[agreement]" type="hidden" value="0">
+              <input class="mb-2 mr-2" type="checkbox" value="1" name="user[agreement]" id="user_agreement">
+              <label class="label" for="user_agreement">
+                <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/terms">利用規約</a>
+                と
+                <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/privacy">プライバシーポリシー</a>
+                に同意する
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-text-centered">
+              <%= f.submit "登録", {class: "button is-primary has-text-weight-bold"} %>
+              <%# <input type="submit" name="commit" value="登録" class="button is-primary has-text-weight-bold" id="js-submit" data-disable-with="登録" disabled=""> %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
