@@ -36,21 +36,29 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <a href="lessons/network/exam">
+            <%# <a href="lessons/network/exam"> %>
+            <%= link_to(lesson_index_path_path(anchor: 'network')) do %>
               <%= image_tag asset_path("network.jpg") %>
+            <% end %>
             </a>
           </figure>
         </div>
         <div class="card-content">
           <div class="content">
             <h4 class="add-font-bold">
-              <a class="has-text-grey-darker" href="lessons/network/exam">ネットワーク機器に関する問題</a>
+              <%= link_to(lesson_index_path_path(anchor: 'network'), class:"has-text-grey-darker") do %>
+              <%# <a class="has-text-grey-darker" href="lessons/network/exam">ネットワーク機器に関する問題</a> %>
+                ネットワーク機器に関する問題
+              <% end %>
             </h4>
             <p>
               ネットワークの設計図で出てくる機器のアイコンに関する問題です(Ciscoアイコン)。設計、監視・運用業務でネットワークの設計図を見ることは多いと思われます。未経験の方には参考になると思われますので、ぜひトライしてみましょう！
             </p>
             <p>
-              <%= link_to "ネットワーク機器に関する問題",lessons_network_exam_path, class:"button is-info w-100 mt-2 text-decoration-none" %>
+              <%= link_to(lesson_index_path_path(anchor: 'network'), class:"button is-info w-100 mt-2 text-decoration-none") do %>
+              <%# <%= link_to "ネットワーク機器に関する問題",lesson_path(1), class:"button is-info w-100 mt-2 text-decoration-none" %>
+                ネットワーク機器に関する問題
+              <% end %>
             </p>
           </div>
         </div>
@@ -60,20 +68,26 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <a href="lessons/json/exam">
+            <%= link_to(lesson_index_path_path(anchor: 'json')) do %>
               <%= image_tag asset_path("json.jpg") %>
             </a>
           </figure>
+          <% end %>
         </div>
         <div class="card-content">
           <div class="content">
             <h4 class="add-font-bold">
-              <a class="has-text-grey-darker" href="lessons/network/exam">Zabbixで使われるJSON問題編</a>
+              <%= link_to(lesson_index_path_path(anchor: 'json'), class:"has-text-grey-darker") do %>
+                Zabbixで使われるJSON問題編
+              <% end %>
             </h4>
             <p>
               Zabbixとは主に運用・監視業務で使われる、システムの監視を自動化するツールのこと。Zabbix API(ZabbixのWeb管理画面で行ったさまざまな操作を管理画面を使用せずに行える)によって、JSON形式でデータのやり取りができる。(恐らくネットワークエンジニアでもプログラムが書ける人しか使わないと思われる)
             </p>
-            <%= link_to "問題編", lessons_json_exam_path, class:"button is-info w-100 mt-2 text-decoration-none " %>
+            <%# <%= link_to "問題編", lessons_path, class:"button is-info w-100 mt-2 text-decoration-none " %>
+            <%= link_to(lesson_index_path_path(anchor: 'json'), class:"button is-info w-100 mt-2 text-decoration-none") do %>
+              問題編
+            <% end %>
           </div>
         </div>
       </div>
@@ -99,71 +113,9 @@
       </div>
     </div>
   </div>
-  <div class="column is-8 is-offset-2 my-5 has-text-centered">
-    <h2 class="title mb-5 add-font-regular">プログラミング系</h2>
-  </div>
-  <div class="columns my-5">
-    <div class="column is-4">
-      <div class="card has-text-centered">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="/lessons/vimmer-01">
-              <%= image_tag asset_path("batchfile.jpg")%>
-            </a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <h4 class="add-font-bold">
-              <a class="has-text-grey-darker" href="lessons/batch/exam">バッチファイル問題編</a>
-            </h4>
-            <p>
-              バッチファイルとは、コマンドプロンプトやパワーシェルで実行できるコマンド列を記述したテキストファイルのこと。処理を自動化することができる。
-            </p>
-            <p>
-              <%= link_to "バッチファイル問題編",lessons_batch_exam_path, class:"button is-info w-100 mt-2 text-decoration-none" %>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-4">
-      <div class="card has-text-centered">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <%= image_tag asset_path("no_image.jpg") %>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <h4 class="add-font-bold">募集中</h4>
-            <p>お問い合わせフォームから<br>お願いします</p>
-            <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-4">
-      <div class="card has-text-centered">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <%= image_tag asset_path("no_image.jpg") %>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <h4 class="add-font-bold">募集中</h4>
-            <p>お問い合わせフォームから<br>お願いします</p>
-            <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   
   
-  <div class="column is-8 is-offset-2 my-5 has-text-centered">
+  <% if false %><div class="column is-8 is-offset-2 my-5 has-text-centered">
     <h2 class="title mb-5 add-font-regular">ゲーム感覚でVimを学ぶ</h2>
     <p class="subtitle add-font-bold">大将を目指して、ランクアップしましょう。</p>
       <%= image_tag asset_path("goal.jpg") ,class: "panel-image-third"%>
@@ -173,7 +125,7 @@
     <% else %>
       <button class="btn btn-secondary" onclick="location.href='/users/sign_up'">ユーザー登録はこちら</button>
     <% end %>
-  </div>
+  </div><% end %>
 </section>
 
 

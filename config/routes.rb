@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   get "/" => "top#index"
   get "references/networks", to: 'references#networks'
   get "references/jsons", to: 'references#jsons'
+  get "lessons", to: 'lessons#index', as:'lesson_index_path'
   
   # lessonsのパス設定
   resources :lessons, only: [:show, :update, :new, :create]
-  get "lessons", to: 'lessons#index'
   # get "lessons/batch/reference", to: 'lessons/batchs#index'
   # get "lessons/network/reference", to: 'lessons/networks#index'
   # get "lessons/json/reference", to: 'lessons/jsons#index'
