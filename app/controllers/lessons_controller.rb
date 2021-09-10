@@ -10,10 +10,10 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @post = Lesson.find(params[:question_id])
-    @like = current_user.likes.build(question_id: params[:question_id])
-    @like.save
-    @likeCounts = Like.where(question_id: params[:question_id])
+    # @post = Lesson.find(params[:question_id])
+    # @like = current_user.likes.build(question_id: params[:question_id])
+    # @like.save
+    # @likeCounts = Like.where(question_id: params[:question_id])
   end
 
   def show
@@ -27,38 +27,6 @@ class LessonsController < ApplicationController
 
     @answered = []
 
-    # questions = Question.select(:id, :content).where(lesson_id: params[:id])
-    # question_ids = questions.pluck(:id)
-    # choices = Choice.select(:id, :content, :question_id).where(question_id: question_ids)
-
-    # console
-
-    # @all_questions_and_choices = []
-
-    # questions.each do |q|
-    #   q_hash = q.attributes
-    #   p "--------------------#{q_hash.inspect}--------------------"
-    #   # logger.debug(q_hash.inspect.to_s)
-    #   choices_array = []
-    #   choices.each do |c|
-
-    #     if q_hash["id"] == c.question_id
-    #       hash = {}
-    #       hash["id"] = c.id
-    #       hash["content"] = c.content
-    #       # logger.debug("------------------" + hash.inspect)
-    #       choices_array.push(hash)
-    #     end
-    #   end
-    #   q_hash["choices"] = choices_array.shuffle!
-    #   @all_questions_and_choices.push(q_hash)
-    # end
-
-    # @all_questions_and_choices.shuffle!
-    # # logger.debug(@all_questions_and_choices.inspect)
-
-    # @quiz_index = 0
-    # p "--------------------#{@all_questions_and_choices.inspect}--------------------"
   end
 
   def edit
@@ -68,10 +36,10 @@ class LessonsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:question_id])
-    @like = Like.find_by(question_id: params[:question_id], user_id: current_user.id)
-    @like.destroy
-    @likeCounts = Like.where(question_id: params[:question_id])
+    # @post = Post.find(params[:question_id])
+    # @like = Like.find_by(question_id: params[:question_id], user_id: current_user.id)
+    # @like.destroy
+    # @likeCounts = Like.where(question_id: params[:question_id])
   end
 
   def check

@@ -4,6 +4,6 @@ class Lessons::JsonsController < ApplicationController
   end
 
   def show
-    # @json = Lessons.new
+
   end
 end

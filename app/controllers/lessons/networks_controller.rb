@@ -4,6 +4,6 @@ class Lessons::NetworksController < ApplicationController
   end
 
   def show
-    # @network = Lessons.new
+
   end
 end
