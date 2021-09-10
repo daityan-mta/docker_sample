@@ -69,6 +69,15 @@
               <%# <input type="submit" name="commit" value="更新" class="col-md-2 btn btn-primary mx-3" data-disable-with="更新"> %>
                   <% end %>
             </div>
+
+            <h1>ユーザー一覧</h1>
+            <% @users.each do |user| %>
+              <a href="/users/<%= user.id %>"><%= user.email %></a>
+              <hr>
+            <% end %>
+            <%= link_to "ホームへ戻る", lessons_path %>
+
+
           </div>
         </form>            
       </div>

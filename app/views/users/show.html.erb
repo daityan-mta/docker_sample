@@ -30,6 +30,22 @@
                         <a class="col-md-2 btn btn-primary mx-3" href="/users/edit">アカウント編集</a>
                     </div>
                 </div>
+
+                <h1>ユーザー詳細ページ</h1>
+                <h3><%= @user.email %></h3>
+                <h2>投稿内容</h2>
+                <% @user.questions.each do |post| %>
+                    <a href="/quetions/<%= post.id %>"><%= post.content %></a>
+                    <hr>
+                <% end %>
+                <h3>いいねしている投稿</h3>
+                <% @user.answered_questions.each do |post| %>
+                    <%= post.user.email %>
+                    <%= post.content %>
+                <% end %>
+                <%= link_to "ユーザー一覧へ", users_path %>
+                <%= link_to "ホームへ戻る", questions_path %>
+
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_12_121900) do
+ActiveRecord::Schema.define(version: 2021_09_08_131603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_08_12_121900) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
   create_table "choices", force: :cascade do |t|
     t.string "content"
     t.boolean "is_answer"
@@ -48,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_121900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_path"
+    t.integer "lesson_id"
   end
 
   create_table "helps", force: :cascade do |t|
@@ -56,10 +66,24 @@ ActiveRecord::Schema.define(version: 2021_08_12_121900) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lessons", force: :cascade do |t|
+  create_table "inquiries", force: :cascade do |t|
+    t.integer "genre", null: false
     t.string "name"
+    t.string "email"
+    t.string "inquiery", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "genre"
+    t.string "introduce"
+    t.string "image_name"
+    t.string "reference"
+    t.string "path"
+    t.string "reference_url"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -67,6 +91,12 @@ ActiveRecord::Schema.define(version: 2021_08_12_121900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lesson_id"
+    t.integer "question_id"
+  end
+
+  create_table "references", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tops", force: :cascade do |t|
@@ -98,4 +128,6 @@ ActiveRecord::Schema.define(version: 2021_08_12_121900) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
 end

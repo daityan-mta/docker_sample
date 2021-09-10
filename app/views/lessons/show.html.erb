@@ -1,23 +1,4 @@
-<%= @lesson.name %>
-<%# <%= @choices.content %> 
-<div class = "whole"> 
+<div class="whole"> 
   <div id="container">
-    <%@questions.each do |f| %>
-     <h1><%= f.content %></h1>
-    <% end %>
-    <%@choices.each do |f| %>
-      <% if f.image_path.present?%>
-        <%# <h1><%= image_tag asset_path("medicon.jpg"), :width => '220', :height => '220'%= f.content</h1> %> 
-    <ul>
-       <li class="answer"><%= image_tag asset_path(f.image_path), :width => '220', :height => '220' %></li>
-     </ul>
-      <% end %>
-      <%= f.content %>
-       <%# <li class="answer">A1</li>
-       <li class="answer">A2</li>
-       <li class="answer">A3</li> %>
-    <% end git init%>
-     <div id="btn" class="disabled">Next Question</div>
-   </div>
- </div>
- <div>
+  <%= render "lessons/question", question: @question, choices: @choices, answered: @answered %>
+  </div>
