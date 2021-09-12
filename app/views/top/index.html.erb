@@ -18,7 +18,7 @@
             <a class="button is-primary w-50 text-decoration-none mt-4" href="/lessons">すぐにレッスンを受講</a>
             <small class="form-text text-muted mt-2 is-hidden-tablet">※レッスンはPC専用です。</small>
             <% unless user_signed_in? %>
-              <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small>
+              <%# <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small> %>
             <% end %>
           </li>
         </ul>
@@ -29,7 +29,7 @@
 </section>
 <section class="container">
   <div class="column is-8 is-offset-2 my-5 has-text-centered">
-    <h2 class="title mb-5 add-font-regular">ネットワークエンジニア業務に関する問題系</h2>
+    <h2 class="title mb-5 add-font-regular">問題一覧</h2>
   </div>
   <div class="columns my-5">
     <div class="column is-4">

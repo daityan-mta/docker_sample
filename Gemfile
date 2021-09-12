@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -62,7 +63,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
 end
@@ -79,3 +79,4 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'activeadmin'
 gem 'seed-fu'
+gem 'rails-i18n'

@@ -18,7 +18,7 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
         <div class="field">
-          <%= f.label :password %> <i>(変更しないなら空欄のままにしてください)</i><br />
+          <%= f.label :password %> <i>(変更しないなら空欄のままにしてください)<br>※ <%= @minimum_password_length %>文字以上で入力してください</i><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
           <% if @minimum_password_length %>
             <br />
@@ -26,7 +26,7 @@
           <% end %>
           <div class="control">
             <input class="input" required="required" type="password" name="user[password]" id="user_password">
-            <small class="form-text text-muted">半角英小文字・英大文字・数字を組み合わせ、8文字以上で入力してください。</small>
+            <small class="form-text text-muted">半角英小文字・英大文字・数字を組み合わせ、6文字以上で入力してください。</small>
           </div>
         </div>
         <div class="field">
