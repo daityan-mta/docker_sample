@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
-    @users = User.all
   end
   
   def new
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザーを更新しました"
       redirect_to :users
     else
-      render "new"
+      render "index"
     end
   end
 

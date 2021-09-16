@@ -46,3 +46,48 @@ ul > li {
 #btn.disabled {
   opacity: 0.5;
 }
+
+.question{
+  padding: 0.5em 1em;
+  margin:0 0 3em 0;
+  font-weight: bold;
+  border-radius: 10px;/*角の丸み*/
+}
+
+
+.answer{
+  text-align: center;
+  font-size: 50px;
+}
+
+.answer-content{
+  font-size: 20px;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) ;
+}
+
+.answer-whole{
+  margin-bottom: 30px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+}
+
+.choice-image{
+  margin: 4em 0 0 0 ;
+}
+
+.choice{
+  padding: 0.5em 1em;
+  margin:3em 0 0  0;
+  font-weight: bold;
+  color: black;/*文字色*/
+  background: rgb(255, 255, 255);
+  border: solid 3px black;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}

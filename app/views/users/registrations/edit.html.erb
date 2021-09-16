@@ -22,7 +22,7 @@
           <%= f.password_field :password, autocomplete: "new-password" %>
           <% if @minimum_password_length %>
             <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
+            <em>確認のため、もう一度パスワードを入力してください。</em>
           <% end %>
           <div class="control">
             <input class="input" required="required" type="password" name="user[password]" id="user_password">

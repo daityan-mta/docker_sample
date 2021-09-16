@@ -7,10 +7,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  VALID_PASSWORD_REGIX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
 
   validates :name, presence: true, length: { maximum: 16}
-  validates :email, presence: true
-  validates :password, presence: true, length: { minimum: 6}
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGIX}
+  validates :agreement, acceptance: true
 end
+
+
+#jquery form validation

@@ -32,7 +32,7 @@
 
 
 
-@charset "UTF-8";
+// @charset "UTF-8";
 /* line 1, app/assets/stylesheets/common.scss */
 body {
   position: relative;
@@ -580,7 +580,6 @@ div.actions {
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table;
 }
 
 /* line 43, app/assets/stylesheets/scaffolds.scss */
@@ -588,7 +587,8 @@ div.actions {
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-left: 25%;
   background-color: #f0f0f0;
 }
 
@@ -734,6 +734,7 @@ label {
 .user .user-view {
   background-color: #F6F8F9;
   border-left: 2px solid #e2e2e2;
+  margin-top: 30px;
 }
 
 /* line 43, app/assets/stylesheets/users.scss */
@@ -741,7 +742,7 @@ label {
   max-width: 880px;
   background-color: #fff;
   border: 1px solid #eaedef;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
 /* line 49, app/assets/stylesheets/users.scss */
@@ -766,6 +767,7 @@ label {
 .user .icon-box {
   text-align: center;
 }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

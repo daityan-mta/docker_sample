@@ -1,6 +1,6 @@
 Choice.seed do |s|
   s.id = 1
-  s.content = '選択肢1'
+  s.content = ""
   s.is_answer = true
   s.question_id = 1
   s.image_path = "switch.jpg"
@@ -9,8 +9,8 @@ end
 
 Choice.seed do |s|
   s.id = 2
-  s.content = '選択肢2'
-  s.is_answer = true
+  s.content = ""
+  s.is_answer = false
   s.question_id = 1
   s.image_path = "maltilayer.jpg"
   s.lesson_id = 1
@@ -18,7 +18,7 @@ end
 
 Choice.seed do |s|
   s.id = 3
-  s.content = '選択肢3'
+  s.content = ""
   s.is_answer = false
   s.question_id = 1
   s.image_path = "modem.jpg"
@@ -27,7 +27,7 @@ end
 
 Choice.seed do |s|
   s.id = 4
-  s.content = '選択肢4'
+  s.content = ""
   s.is_answer = false
   s.question_id = 1
   s.image_path = "hub.jpg"
@@ -36,7 +36,7 @@ end
 
 Choice.seed do |s|
   s.id = 5
-  s.content = '選択肢1'
+  s.content = ""
   s.is_answer = false
   s.question_id = 2
   s.image_path = "onu.jpg"
@@ -45,7 +45,7 @@ end
 
 Choice.seed do |s|
   s.id = 6
-  s.content = '選択肢2'
+  s.content = ""
   s.is_answer = false
   s.question_id = 2
   s.image_path = "firewall.jpg"
@@ -54,7 +54,7 @@ end
 
 Choice.seed do |s|
   s.id = 7
-  s.content = '選択肢3'
+  s.content = ""
   s.is_answer = false
   s.question_id = 2
   s.image_path = "AP.jpg"
@@ -63,7 +63,7 @@ end
 
 Choice.seed do |s|
   s.id = 8
-  s.content = '選択肢4'
+  s.content = ""
   s.is_answer = true
   s.question_id = 2
   s.image_path = "medicon.jpg"
@@ -72,16 +72,16 @@ end
 
 Choice.seed do |s|
   s.id = 9
-  s.content = '選択肢1'
+  s.content = ""
   s.is_answer = false
-  s.question_id = 2
+  s.question_id = 3
   s.image_path = "real_modem.jpg"
   s.lesson_id = 1
 end
 
 Choice.seed do |s|
   s.id = 10
-  s.content = '選択肢2'
+  s.content = ""
   s.is_answer = true
   s.question_id = 3
   s.image_path = "RealAP.jpg"
@@ -90,7 +90,7 @@ end
 
 Choice.seed do |s|
   s.id = 11
-  s.content = '選択肢3'
+  s.content = ""
   s.is_answer = false
   s.question_id = 3
   s.image_path = "real_hab.jpg"
@@ -99,7 +99,7 @@ end
 
 Choice.seed do |s|
   s.id = 12
-  s.content = '選択肢4'
+  s.content = ""
   s.is_answer = false
   s.question_id = 3
   s.image_path = "real_ONU.jpg"
@@ -144,7 +144,7 @@ end
 
 Choice.seed do |s|
   s.id = 17
-  s.content = '選択肢1'
+  s.content = ""
   s.is_answer = false
   s.question_id = 5
   s.image_path = "AP.jpg"
@@ -153,19 +153,28 @@ end
 
 Choice.seed do |s|
   s.id = 18
-  s.content = '選択肢2'
+  s.content = ""
   s.is_answer = false
   s.question_id = 5
-  s.image_path = "medicon.jpg"
+  s.image_path = "real_hab.jpg"
   s.lesson_id = 1
 end
 
 Choice.seed do |s|
   s.id = 19
-  s.content = '選択肢3'
+  s.content = ""
   s.is_answer = true
   s.question_id = 5
   s.image_path = "maltilayer.jpg"
+  s.lesson_id = 1
+end
+
+Choice.seed do |s|
+  s.id = 20
+  s.content = ""
+  s.is_answer = false
+  s.question_id = 5
+  s.image_path = "medicon.jpg"
   s.lesson_id = 1
 end
 
@@ -245,7 +254,7 @@ Choice.seed do |s|
   s.id = 29
   s.content = "ネットワークパケットをキャプチャして分析するツール"
   s.is_answer = false
-  s.question_id = 1
+  s.question_id = 8
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -254,7 +263,7 @@ Choice.seed do |s|
   s.id = 30
   s.content = "オープンソースのWindows 用比較・マージツール"
   s.is_answer = false
-  s.question_id = 1
+  s.question_id = 8
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -263,7 +272,7 @@ Choice.seed do |s|
   s.id = 31
   s.content = "ネットワーク上でメールを転送・配送するソフトウェア"
   s.is_answer = false
-  s.question_id = 1
+  s.question_id = 8
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -272,7 +281,7 @@ Choice.seed do |s|
   s.id = 32
   s.content = "ネットワーク機器に障害が発生した時に使われるツールであり、保守・監視業務で使われる。"
   s.is_answer = true
-  s.question_id = 1
+  s.question_id = 8
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -281,7 +290,7 @@ Choice.seed do |s|
   s.id = 33
   s.content = "{'キー','値'}"
   s.is_answer = false
-  s.question_id = 2
+  s.question_id = 9
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -290,7 +299,7 @@ Choice.seed do |s|
   s.id = 34
   s.content = "{'キー':'値'}"
   s.is_answer = false
-  s.question_id = 2
+  s.question_id = 9
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -299,7 +308,7 @@ Choice.seed do |s|
   s.id = 35
   s.content = "{\"キー\",\"値\"}"
   s.is_answer = false
-  s.question_id = 2
+  s.question_id = 9
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -308,7 +317,7 @@ Choice.seed do |s|
   s.id = 36
   s.content = "{“キー”:“値”}"
   s.is_answer = true
-  s.question_id = 2
+  s.question_id = 9
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -317,7 +326,7 @@ Choice.seed do |s|
   s.id = 37
   s.content = "\"method\""
   s.is_answer = false
-  s.question_id = 3
+  s.question_id = 10
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -326,7 +335,7 @@ Choice.seed do |s|
   s.id = 38
   s.content = "\"params\""
   s.is_answer = false
-  s.question_id = 3
+  s.question_id = 10
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -335,7 +344,7 @@ Choice.seed do |s|
   s.id = 39
   s.content = "\"auth\""
   s.is_answer = false
-  s.question_id = 3
+  s.question_id = 10
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -344,7 +353,7 @@ Choice.seed do |s|
   s.id = 40
   s.content = "\"jsonrpc\""
   s.is_answer = true
-  s.question_id = 3
+  s.question_id = 10
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -353,7 +362,7 @@ Choice.seed do |s|
   s.id = 41
   s.content = "\"method\": \"host.get\""
   s.is_answer = false
-  s.question_id = 4
+  s.question_id = 11
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -362,7 +371,7 @@ Choice.seed do |s|
   s.id = 42
   s.content = "\"method\": \"device.get\""
   s.is_answer = false
-  s.question_id = 4
+  s.question_id = 11
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -371,7 +380,7 @@ Choice.seed do |s|
   s.id = 43
   s.content = "\"method\": \"event.get\""
   s.is_answer = false
-  s.question_id = 4
+  s.question_id = 11
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -380,7 +389,7 @@ Choice.seed do |s|
   s.id = 44
   s.content = "\"method\": \"incident.get\""
   s.is_answer = false
-  s.question_id = 4
+  s.question_id = 11
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -389,7 +398,7 @@ Choice.seed do |s|
   s.id = 45
   s.content = "データの値を降順に並べる"
   s.is_answer = false
-  s.question_id = 5
+  s.question_id = 12
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -398,7 +407,7 @@ Choice.seed do |s|
   s.id = 46
   s.content = "含まれたデータを抽出すること"
   s.is_answer = true
-  s.question_id = 5
+  s.question_id = 12
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -407,7 +416,7 @@ Choice.seed do |s|
   s.id = 47
   s.content = "データの更新時にプロパティ値を返すこと"
   s.is_answer = false
-  s.question_id = 5
+  s.question_id = 12
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -416,7 +425,7 @@ Choice.seed do |s|
   s.id = 48
   s.content = "プロパティ値を出力する"
   s.is_answer = false
-  s.question_id = 5
+  s.question_id = 12
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -425,7 +434,7 @@ Choice.seed do |s|
   s.id = 49
   s.content = "\"auth\"は障害時に出るアラート,\"ID\"はオブジェクトID。"
   s.is_answer = false
-  s.question_id = 6
+  s.question_id = 13
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -434,7 +443,7 @@ Choice.seed do |s|
   s.id = 50
   s.content = "\"auth\"は障害時に出るアラート,\"ID\"はホストID。"
   s.is_answer = false
-  s.question_id = 6
+  s.question_id = 13
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -443,7 +452,7 @@ Choice.seed do |s|
   s.id = 51
   s.content = "\"auth\"は障害時に出るアラート,\"ID\"はホストID。"
   s.is_answer = false
-  s.question_id = 6
+  s.question_id = 13
   s.image_path = nil
   s.lesson_id = 2
 end
@@ -452,7 +461,7 @@ Choice.seed do |s|
   s.id = 52
   s.content = "\"auth\"は認証キー,\"ID\"は認証キー。"
   s.is_answer = true
-  s.question_id = 6
+  s.question_id =13
   s.image_path = nil
   s.lesson_id = 2
 end

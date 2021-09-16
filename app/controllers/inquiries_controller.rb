@@ -2,6 +2,7 @@ class InquiriesController < ApplicationController
 
   def new
     # @inquiry = Inquiry.new(params.require(:inquiry).permit(:genre,:name,:email,:inquiery))
+    p '-----new-----'
     @inquiry = Inquiry.new
   end
 

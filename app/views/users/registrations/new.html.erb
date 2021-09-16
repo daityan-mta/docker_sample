@@ -34,7 +34,7 @@
               </div>
               <div class="control">
                 <%= f.password_field :password, autocomplete: "new-password" ,class: "input" %>
-                <small class="form-text text-muted">※半角英小文字・英大文字・数字を組み合わせ、8文字以上で入力してください。</small>
+                <small class="form-text text-muted">※6文字以上で入力してください。</small>
               </div>
             </div>
             <div class="field">
@@ -43,30 +43,32 @@
                 </div>
                 <%= f.label :password_confirmation,"パスワード確認用", {class: "label"} %><br />
               </div>
-            <div class="control">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "input" %>
+              <div class="control">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "input" %>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="d-flex justify-content-start align-items-center">
-              <input name="user[agreement]" type="hidden" value="0">
-              <input class="mb-2 mr-2" type="checkbox" value="1" name="user[agreement]" id="user_agreement">
-              <label class="label" for="user_agreement">
-                <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/terms">利用規約</a>
-                と
-                <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/privacy">プライバシーポリシー</a>
-                に同意する
-              </label>
+            <div class="field">
+              <div class="d-flex justify-content-start align-items-center">
+                <input name="user[agreement]" type="hidden" value="0">
+                <input class="mb-2 mr-2" type="checkbox" value="1" name="user[agreement]" id="user_agreement">
+                <label class="label" for="user_agreement">
+                  <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/terms">利用規約</a>
+                  と
+                  <a class="has-text-grey-darker border-bottom border-secondary text-decoration-none" href="/privacy">プライバシーポリシー</a>
+                  に同意する
+                </label>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="control has-text-centered">
-              <%= f.submit "登録", {class: "button is-primary has-text-weight-bold"} %>
+            <div class="field">
+              <div class="control has-text-centered">
+                <%= f.submit "登録", {class: "button is-primary has-text-weight-bold"} %>
               <%# <input type="submit" name="commit" value="登録" class="button is-primary has-text-weight-bold" id="js-submit" data-disable-with="登録" disabled=""> %>
+              </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
+      </div>
       </form>
     </div>
   </div>

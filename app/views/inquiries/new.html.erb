@@ -1,9 +1,14 @@
-<%= render "shared/error", obj: @inquiry %>
 
 <div class="container my-4">
   <h1 class="title has-text-centered">お問い合わせフォーム</h1>
   <div class="rows">
     <div class="column is-8 is-offset-2">
+    <%# <% if @inquiry.errors.any? %>
+      <%# <% @inquiry.errors.full_messages.each do |message| %>
+        <%# <%= message %>
+      <%# <% end %>
+    <%# <% end %>
+      <%# <%= render "shared/error", obj: @inquiry %>
       <%= form_for @inquiry, html: { 'accept-charset':"UTF-8" } do |f| %>
       <%# <form action="/inquiries" accept-charset="UTF-8" method="post"> %>
       <input type="hidden" name="authenticity_token" value="3Jq0sN7OTytAJ2fCGB9t2KrHB9Rc5hKr08Wf1Kh62tRnWRqhPWVyTI7r7MD9agOCS+vbVEK4Bt2nrcFkzcGjng==">
@@ -51,11 +56,12 @@
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-danger mr-2 mb-2">必須</div>
           <%= f.label :inquiery, "お問い合わせ内容" ,class:"label"%>
+          <%= render "shared/error", obj: @inquiry %>
                 <%# <label class="label" for="inquiry_body">お問い合わせ内容 %>
                 <%# </label> %>
         </div>
         <div class="control">
-          <%= f.text_area :inquiery, id: "inquiry_body", rows:"10"%>
+          <%= f.text_area :inquiery, id: "inquiry_body", rows:"10", class:"is-invalid textarea is-info" %>
                 <%# <textarea class="is-invalid textarea is-info" rows="10" name="inquiry[inquiery]" id="inquiry_body"></textarea> %>
           <div class="invalid-feedback">お問い合わせ内容を入力してください</div>
         </div>

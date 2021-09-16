@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   # usersのパス設定
   get "users", to: 'users#index'
-  patch "users" => 'users#update'
+  patch "users", to: 'users#update'
   get "users/account/:id", to: 'users#show', as: :show_users
 
   # deviseの設定

@@ -1,6 +1,6 @@
 Question.seed do |s|
   s.id = 1
-  s.content = 'Q.スイッチはどれか?'
+  s.content = 'Q.L2スイッチはどれか?'
   s.lesson_id = 1
   s.question_id = 1
 end
@@ -84,7 +84,7 @@ end
 
 Question.seed do |s|
   s.id = 13
-  s.content = 'Q.\"auth\"と\"ID\"はそれぞれ何を表しているか？'
+  s.content = 'Q."auth"と"ID"はそれぞれ何を表しているか？'
   s.lesson_id = 2
   s.question_id = 6
 end
