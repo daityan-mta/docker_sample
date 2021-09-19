@@ -1,12 +1,12 @@
 class LessonsController < ApplicationController
   def index
     @lesson = Lesson.all.order(id: "ASC")
-    @les = Lesson.find_by(id: params[:id])
+    # @les = Lesson.find_by(id: params[:id])
     @question = Question.all
   end
   
   def new
-    @lessons = Lesson.new
+    # @lessons = Lesson.new
   end
 
   def create
@@ -18,13 +18,11 @@ class LessonsController < ApplicationController
 
   def show
     @question = Question.where(lesson_id:params[:id]).sample
-    # @question = Question.where(lesson_id:"1").sample
   
     @lesson = Lesson.find_by(id: params[:id])
     
     @choices = @question.choices.where(lesson_id: @lesson.id).shuffle
-    
-
+ 
     @answered = []
 
   end

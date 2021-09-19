@@ -1,39 +1,40 @@
 require 'rails_helper'
 
-RSpec.describe "Lessons", type: :request do
+RSpec.describe LessonsController, type: :controller do
+# RSpec.describe "Lessons", type: :request do
+  before do
+    @question = FactoryBot.create(:user)
+    @lesson = FactoryBot.create(:another_user)
+    @choices = FactoryBot.create(:article)
+  end
+
+
   describe "#index" do
-    let(:lesson) { create(:user, agreement: true)}
-    before do
-      sign_in user
-    end
+    
     # 正常なレスポンスか？
     it "responds successfully" do
-      get users_path
+      get :index
       expect(response).to be_success
     end
+    
     # 200レスポンスが返ってきているか？
     it "returns a 200 response" do
-      get users_path
+      get :index
       expect(response).to have_http_status "200"
     end
   end
   
+
   describe "#show" do
-    before do
-      @lesson = FactoryBot.create(:lesson)
-      @lessons = @lesson.create(
-        genre: 0,
-        introduce: "vim",
-        )
-    end
+
     it "responds successfully" do
-      sign_in @lesson
-      get :show, params: {id: @lessons.id}
+      get :show, params: {id: @lesson.id}
       expect(response).to be_success
     end
+
+  # 200レスポンスが返ってきているか？
     it "returns a 200 response" do
-      sign_in @lesson
-      get :show, params: {id: @lessons.id}
+      get :show, params: {id: @lesson.id}
       expect(response).to have_http_status "200"
     end
   end
