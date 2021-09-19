@@ -17,9 +17,9 @@
           <li>
             <a class="button is-primary w-50 text-decoration-none mt-4" href="/lessons">すぐにレッスンを受講</a>
             <small class="form-text text-muted mt-2 is-hidden-tablet">※レッスンはPC専用です。</small>
-            <% unless user_signed_in? %>
+            <%# <% unless user_signed_in? %>
               <%# <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small> %>
-            <% end %>
+            <%# <% end %>
           </li>
         </ul>
         <%= image_tag asset_path("job_programmer.jpg"), :width => '250', :height => '250' %>
@@ -40,7 +40,6 @@
             <%= link_to(lesson_index_path_path(anchor: 'network')) do %>
               <%= image_tag asset_path("network.jpg") %>
             <% end %>
-            </a>
           </figure>
         </div>
         <div class="card-content">
@@ -96,16 +95,16 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <%# <a href="lessons/json/exam"> %>
-              <%= image_tag asset_path("no_image.jpg") %>
-            </a>
+            <%= image_tag asset_path("no_image.jpg") %>
           </figure>
         </div>
         <div class="card-content">
           <div class="content">
-            <h4 class="add-font-bold">募集中</h4>
+            <h4 class="add-font-bold has-text-grey-darker">
+              募集中
+            </h4>
             <p>
-            お問い合わせフォームからお願いします
+              現在新たな種類の問題を募集しています。問題を考えて下さった方は「お問い合わせフォーム」から投稿をお願いいたします🙇‍♀️
             </p>
             <button class="button is-info w-100 mt-2 text-decoration-none" disabled="disable">募集中
           </div>
@@ -113,19 +112,6 @@
       </div>
     </div>
   </div>
-  
-  
-  <% if false %><div class="column is-8 is-offset-2 my-5 has-text-centered">
-    <h2 class="title mb-5 add-font-regular">ゲーム感覚でVimを学ぶ</h2>
-    <p class="subtitle add-font-bold">大将を目指して、ランクアップしましょう。</p>
-      <%= image_tag asset_path("goal.jpg") ,class: "panel-image-third"%>
-    <p class="subtitle add-font-bold mt-5">Vimmerへの道をかけ登りましょう！</p>
-      <%= image_tag asset_path("suii.jpg") ,class: "panel-image-fourth"%>
-    <% if user_signed_in? %>
-    <% else %>
-      <button class="btn btn-secondary" onclick="location.href='/users/sign_up'">ユーザー登録はこちら</button>
-    <% end %>
-  </div><% end %>
 </section>
 
 

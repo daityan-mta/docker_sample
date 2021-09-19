@@ -28,8 +28,12 @@ Rails.application.routes.draw do
   # post "inquiries/create", to: 'inquiries#create'
 
   # usersのパス設定
-  get "users", to: 'users#index'
-  patch "users", to: 'users#update'
+  get "users/:id/edit", to: 'users#edit', as: :edit_user_get
+  patch "users/:id/edit", to: 'users#update'
+  # patch "users/:id/edit", to: 'users#edit'
+  # get "users/index", to: 'users#update'
+  # patch "users/index", to: 'users#update'
+  # post "users/index", to: 'users#create'
   get "users/account/:id", to: 'users#show', as: :show_users
 
   # deviseの設定
@@ -37,11 +41,6 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   } 
-
-  devise_scope :user do
-    get "users/sign_in", :to => "users/sessions#new"
-    get "users/sign_out", :to => "users/sessions#destroy" 
-  end
 
   post "lessons/check", :to => "lessons#check"
 end

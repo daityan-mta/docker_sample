@@ -34,8 +34,8 @@
           <div class="row">
           </div>
         </div>
-        <%= form_for @user, url: users_index_path, methods: :patch do |f| %>
-        <form class="edit_user" id="edit_user_744" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post">
+        <%= form_for @user, url: edit_user_get_path, methods: :patch do |f| %>
+        <%# <form class="edit_user" id="edit_user_744" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post"> %>
           <input type="hidden" name="_method" value="patch">
           <input type="hidden" name="authenticity_token" value="8iI4iI6VCVKGx0/eBrB6Xq5n5wDh2Xlly7YQE4zzdBLYcp3icK49pZ9YiZlvSbeUBiXFukAuLwcaGwp/vQNZkw==">
           <div class="update-content">
