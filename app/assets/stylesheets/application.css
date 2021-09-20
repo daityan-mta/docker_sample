@@ -27577,11 +27577,11 @@ button.toast-close-button {
   font-family: MPLUS1p-Regular
 }
 
-  .notice {
-    background-color: blue;
-    color: white;
-    text-align: center;
-  }
+.notice {
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
 
 
 .alert {

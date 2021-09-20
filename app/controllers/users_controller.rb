@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     # @user = current_user 
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update!(params.require(:user).permit(:name, :introduction, :image))
+    if @user.update(user_params)
       flash[:notice] = "ユーザーを更新しました"
       redirect_to :edit_user_get
     else
@@ -32,4 +33,8 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:name, :introduction, :image)
+  end
 end

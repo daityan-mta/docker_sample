@@ -1,7 +1,6 @@
 class InquiriesController < ApplicationController
 
   def new
-    # @inquiry = Inquiry.new(params.require(:inquiry).permit(:genre,:name,:email,:inquiery))
     p '-----new-----'
     @inquiry = Inquiry.new
   end
@@ -10,7 +9,7 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(params.require(:inquiry).permit(:genre,:name,:email,:inquiery))
     if @inquiry.save
       flash[:notice] = "投稿が完了しました"
-      redirect_to :top
+      redirect_to top_path, notice: "投稿が完了しました"
     else
       flash[:notice] = "投稿に失敗しました"
       render :new

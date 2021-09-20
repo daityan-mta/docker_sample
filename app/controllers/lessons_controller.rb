@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
   def index
     @lesson = Lesson.all.order(id: "ASC")
-    # @les = Lesson.find_by(id: params[:id])
     @question = Question.all
   end
   
@@ -10,20 +9,21 @@ class LessonsController < ApplicationController
   end
 
   def create
-    # @post = Lesson.find(params[:question_id])
-    # @like = current_user.likes.build(question_id: params[:question_id])
-    # @like.save
-    # @likeCounts = Like.where(question_id: params[:question_id])
   end
 
   def show
-    @question = Question.where(lesson_id:params[:id]).sample
-  
+    @question = Question.where(lesson_id: params[:id]).sample
+    p 'question-------------------------'
+    p @question
     @lesson = Lesson.find_by(id: params[:id])
-    
+    p 'lesson-------------------------'
+    p @lesson
     @choices = @question.choices.where(lesson_id: @lesson.id).shuffle
- 
+    p 'choices-------------------------'
+    p @choices
     @answered = []
+    p 'answered-------------------------'
+    p @answered
 
   end
 
@@ -43,7 +43,7 @@ class LessonsController < ApplicationController
   def check
     @answered = choice_params[:answered]&.permit! || []
     @answered.push({choice_id: choice_params[:choice_id], question_id: choice_params[:question_id]})
-    
+
     answered_question_ids = @answered.map{|answer| answer[:question_id]}
     p answered_question_ids
     question = Question.find(choice_params[:question_id])

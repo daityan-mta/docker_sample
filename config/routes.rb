@@ -29,7 +29,8 @@ Rails.application.routes.draw do
 
   # usersのパス設定
   get "users/:id/edit", to: 'users#edit', as: :edit_user_get
-  patch "users/:id/edit", to: 'users#update'
+  patch "users/:id", to: 'users#update', as: :edit_user_patch
+  put "users/:id", to: 'users#update', as: :edit_user_put
   # patch "users/:id/edit", to: 'users#edit'
   # get "users/index", to: 'users#update'
   # patch "users/index", to: 'users#update'

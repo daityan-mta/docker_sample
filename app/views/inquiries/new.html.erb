@@ -3,53 +3,32 @@
   <h1 class="title has-text-centered">お問い合わせフォーム</h1>
   <div class="rows">
     <div class="column is-8 is-offset-2">
-    <%# <% if @inquiry.errors.any? %>
-      <%# <% @inquiry.errors.full_messages.each do |message| %>
-        <%# <%= message %>
-      <%# <% end %>
-    <%# <% end %>
-      <%# <%= render "shared/error", obj: @inquiry %>
       <%= form_for @inquiry, html: { 'accept-charset':"UTF-8" } do |f| %>
-      <%# <form action="/inquiries" accept-charset="UTF-8" method="post"> %>
-      <input type="hidden" name="authenticity_token" value="3Jq0sN7OTytAJ2fCGB9t2KrHB9Rc5hKr08Wf1Kh62tRnWRqhPWVyTI7r7MD9agOCS+vbVEK4Bt2nrcFkzcGjng==">
       <div class="field">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-danger mr-2 mb-2">必須</div>
           <%= f.label :genre, "カテゴリ", class:"label" %>
-              <%# <label class="label" for="inquiry_category">カテゴリ
-              </label> %>
         </div>
         <div class="select is-info">
         <%= f.select :genre,{'バグや問題報告': 0, 'request': 1, 'others': 2}, {id:"inquiry_category"}%>
-              <%# <select name="inquiry[genre]]" id="inquiry_category"> %>
-                <%# <option value="bug">バグや問題報告</option>
-                <option selected="selected" value="request">機能追加リクエスト</option>
-                <option value="others">その他のお問い合わせ</option> %>
-              <%# </select> %>
         </div>
       </div>
       <div class="field">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-primary mr-2 mb-2">任意</div>
           <%= f.label :name, "お名前", class:"label" %>
-              <%# <label class="label" for="inquiry_name">お名前
-              </label> %>
         </div>
         <div class="control">
           <%= f.text_field :name, id: "inquiry_name", class:"input"%>
-              <%# <input class="input" type="text" value="" name="inquiry[name]" id="inquiry_name"> %>
         </div>
       </div>
       <div class="field">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-primary mr-2 mb-2">任意</div>
           <%= f.label :email, "メールアドレス", class:"label" %>
-              <%# <label class="label" for="inquiry_email">メールアドレス %>
-              <%# </label> %>
         </div>
         <div class="control">
           <%= f.text_field :email, id: "inquiry_email"%>
-              <%# <input class="input" type="email" value="" name="inquiry[email]" id="inquiry_email"></div> %>
         </div>
       </div>
       <div class="field">
@@ -57,18 +36,14 @@
           <div class="badge badge-danger mr-2 mb-2">必須</div>
           <%= f.label :inquiery, "お問い合わせ内容" ,class:"label"%>
           <%= render "shared/error", obj: @inquiry %>
-                <%# <label class="label" for="inquiry_body">お問い合わせ内容 %>
-                <%# </label> %>
         </div>
         <div class="control">
           <%= f.text_area :inquiery, id: "inquiry_body", rows:"10", class:"is-invalid textarea is-info" %>
-                <%# <textarea class="is-invalid textarea is-info" rows="10" name="inquiry[inquiery]" id="inquiry_body"></textarea> %>
           <div class="invalid-feedback">お問い合わせ内容を入力してください</div>
         </div>
         <div class="field">
           <div class="control has-text-centered">
             <%= f.submit "送信", class:"button is-primary has-text-weight-bold", 'data-disable-with':"送信" %>
-                <%# <input type="submit" name="commit" value="送信" class="button is-primary has-text-weight-bold" data-disable-with="送信"> %>
           </div>
         </div>
         <% end %>
