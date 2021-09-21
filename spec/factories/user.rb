@@ -7,4 +7,5 @@ FactoryBot.define do
     password_confirmation { "password" }
     agreement { Faker::Boolean.boolean }
   end
+
 end

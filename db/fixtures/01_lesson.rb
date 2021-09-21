@@ -7,7 +7,7 @@ Lesson.seed do |s|
   s.path = "networks"
   s.reference_url = "networks"
 end
-  
+
 Lesson.seed do |s|
   s.id    = 2
   s.genre = "Zabbixに関するJSON問題編"

@@ -1,16 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    # @user = current_user 
-  end
-  
-  def new
-  end
-
-  def create
-  end
-
   def show
     @user = User.find(params[:id])
   end
@@ -30,10 +20,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
+
   def user_params
     params.require(:user).permit(:name, :introduction, :image)
   end

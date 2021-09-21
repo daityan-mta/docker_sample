@@ -11,5 +11,4 @@ class User < ApplicationRecord
   validates :agreement, acceptance: true
 end
 
-
-#jquery form validation
+# jquery form validation

@@ -108,7 +108,7 @@ end
 
 Choice.seed do |s|
   s.id = 13
-  s.content = '無線でデバイスと繋がり通信を取る機器'
+  s.content = "無線でデバイスと繋がり通信を取る機器"
   s.is_answer = true
   s.question_id = 4
   s.image_path = "nil"
@@ -117,7 +117,7 @@ end
 
 Choice.seed do |s|
   s.id = 14
-  s.content = '異なる伝送媒体(メディア)の間で信号を変換し、相互に通信できるように接続する装置'
+  s.content = "異なる伝送媒体(メディア)の間で信号を変換し、相互に通信できるように接続する装置"
   s.is_answer = false
   s.question_id = 4
   s.image_path = "nil"
@@ -126,7 +126,7 @@ end
 
 Choice.seed do |s|
   s.id = 15
-  s.content = '通信に使用されるケーブルの一種で、データを光信号に変換して伝送するケーブル'
+  s.content = "通信に使用されるケーブルの一種で、データを光信号に変換して伝送するケーブル"
   s.is_answer = false
   s.question_id = 4
   s.image_path = "nil"
@@ -135,7 +135,7 @@ end
 
 Choice.seed do |s|
   s.id = 16
-  s.content = 'LANと比較される用語で、遠く離れた場所とつながったネットワーク'
+  s.content = "LANと比較される用語で、遠く離れた場所とつながったネットワーク"
   s.is_answer = false
   s.question_id = 4
   s.image_path = "nil"
@@ -461,7 +461,7 @@ Choice.seed do |s|
   s.id = 52
   s.content = "\"auth\"は認証キー,\"ID\"は認証キー。"
   s.is_answer = true
-  s.question_id =13
+  s.question_id = 13
   s.image_path = nil
   s.lesson_id = 2
 end

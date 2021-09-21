@@ -25,5 +25,4 @@ ActiveAdmin.register Inquiry do
     end
     f.actions
   end
-
 end

@@ -1,8 +1,5 @@
-<% flash.each do |key, value| %>
-<%= value %>
-<% end %>
 <% if flash[:notice] %>
 　<div class="alert alert-info"><%= flash[:notice] %></div>
-<% elsif alert %>
-  <div class="alert alert-danger"><%= alert %></div>
+<% elsif flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
 <% end %>

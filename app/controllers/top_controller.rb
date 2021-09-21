@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
-    p '-----------'
+    p "-----------"
     p current_user
-    p '-----------'
+    p "-----------"
   end
 end

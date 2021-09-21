@@ -10,16 +10,13 @@
           </li>
           <li>
             <% unless user_signed_in? %>
-              <a class="button is-info has-text-weight-bold w-50 is-medium mt-4 text-decoration-none" href="users/sign_up">ユーザー登録
+              <%= link_to(new_user_registration_path, class: "button is-info has-text-weight-bold w-50 is-medium mt-4 text-decoration-none") do %>
+                ユーザー登録
+              <% end %>
             <% end %>
-            </a>
           </li>
           <li>
-            <a class="button is-primary w-50 text-decoration-none mt-4" href="/lessons">すぐにレッスンを受講</a>
-            <small class="form-text text-muted mt-2 is-hidden-tablet">※レッスンはPC専用です。</small>
-            <%# <% unless user_signed_in? %>
-              <%# <small class="form-text text-muted mt-2">※ログインしない場合は、受講情報が保存されません。</small> %>
-            <%# <% end %>
+            <a class="button is-primary w-50 text-decoration-none mt-4" id="button_lesson" href="/lessons">すぐにレッスンを受講</a>
           </li>
         </ul>
         <%= image_tag asset_path("job_programmer.jpg"), :width => '250', :height => '250' %>
@@ -36,7 +33,6 @@
       <div class="card has-text-centered">
         <div class="card-image">
           <figure class="image is-4by3">
-            <%# <a href="lessons/network/exam"> %>
             <%= link_to(lesson_index_path_path(anchor: 'network')) do %>
               <%= image_tag asset_path("network.jpg") %>
             <% end %>
@@ -46,7 +42,6 @@
           <div class="content">
             <h4 class="add-font-bold">
               <%= link_to(lesson_index_path_path(anchor: 'network'), class:"has-text-grey-darker") do %>
-              <%# <a class="has-text-grey-darker" href="lessons/network/exam">ネットワーク機器に関する問題</a> %>
                 ネットワーク機器に関する問題
               <% end %>
             </h4>
@@ -83,7 +78,6 @@
             <p>
               Zabbixとは主に運用・監視業務で使われる、システムの監視を自動化するツールのこと。Zabbix API(ZabbixのWeb管理画面で行ったさまざまな操作を管理画面を使用せずに行える)によって、JSON形式でデータのやり取りができる。(恐らくネットワークエンジニアでもプログラムが書ける人しか使わないと思われる)
             </p>
-            <%# <%= link_to "問題編", lessons_path, class:"button is-info w-100 mt-2 text-decoration-none " %>
             <%= link_to(lesson_index_path_path(anchor: 'json'), class:"button is-info w-100 mt-2 text-decoration-none") do %>
               問題編
             <% end %>
