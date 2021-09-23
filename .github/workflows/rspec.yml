@@ -28,6 +28,7 @@ jobs:
       DB_USERNAME: postgres
       DB_PASSWORD: password
       DB_HOST: 127.0.0.1
+      BUNDLE_PATH: ./vendor/bundle
       RAILS_ENV: test
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
@@ -35,11 +36,29 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Ruby 2.6.3のセットアップ
+
+
+      - name: Cache Gemfile.lock
+        uses: actions/cache@v2
+        with:
+          path: ./vendor/bundle
+          key: ${{ runner.os }}-rails-bundle-v1-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-rails-bundle-v1-
+
+      - name: Ruby 2.7.4のセットアップ
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
           ruby-version: 2.7.4
+
+
+
+
+      # - name: Ruby 2.6.3のセットアップ
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     bundler-cache: true
+      #     ruby-version: 2.7.4
 
       - name: Databaseのセットアップ
         run: |
