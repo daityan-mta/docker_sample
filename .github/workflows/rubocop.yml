@@ -27,7 +27,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.4
-          
+
       - name: pg gem の依存関係のインストール
         run: |
           sudo apt-get update; sudo apt-get install libpq-dev
@@ -38,15 +38,7 @@ jobs:
       - name: bundler install
         run: |
           bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
-
-
-
-
-      # - name: Ruby 2.6.3のセットアップ
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 2.7.4
-
+          
       - name: rubocopを実行実行
         run: |
           bundle exec rubocop --extra-details --display-style-guide --parallel --display-cop-names

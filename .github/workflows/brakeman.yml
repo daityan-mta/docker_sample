@@ -15,7 +15,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Ruby 3.0.2のセットアップ
+      - name: Ruby 2.7.4のセットアップ
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
