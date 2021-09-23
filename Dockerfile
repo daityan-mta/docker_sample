@@ -1,7 +1,8 @@
-FROM ruby:2.6
+FROM ruby:2.7.4
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /myapp
 WORKDIR /myapp
+RUN gem update --system && gem install bundler:2.2.27
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
