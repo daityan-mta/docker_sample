@@ -4,7 +4,7 @@
   <div class="rows">
     <div class="column is-8 is-offset-2">
       <%= form_for @inquiry, html: { 'accept-charset':"UTF-8" } do |f| %>
-      <div class="field">
+      <div class="field-inquiery">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-danger mr-2 mb-2">必須</div>
           <%= f.label :genre, "カテゴリ", class:"label" %>
@@ -13,7 +13,7 @@
         <%= f.select :genre,{'バグや問題報告': 0, 'request': 1, 'others': 2}, {id:"inquiry_category"}%>
         </div>
       </div>
-      <div class="field">
+      <div class="field-inquiery">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-primary mr-2 mb-2">任意</div>
           <%= f.label :name, "お名前", class:"label" %>
@@ -22,16 +22,27 @@
           <%= f.text_field :name, id: "inquiry_name", class:"input"%>
         </div>
       </div>
-      <div class="field">
+      <div class="field-inquiery">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-primary mr-2 mb-2">任意</div>
           <%= f.label :email, "メールアドレス", class:"label" %>
         </div>
         <div class="control">
-          <%= f.text_field :email, id: "inquiry_email"%>
+          <%= f.text_field :email, class: "input"%>
         </div>
       </div>
-      <div class="field">
+
+      <div class="field-inquiery">
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="badge badge-primary mr-2 mb-2">任意</div>
+          <%= f.label :image, "画像", class:"label" %>
+        </div>
+        <div class="control">
+          <%= f.attachment_field :image, id: "inquiry_email"%>
+        </div>
+      </div>
+
+      <div class="field-inquiery">
         <div class="d-flex justify-content-start align-items-center">
           <div class="badge badge-danger mr-2 mb-2">必須</div>
           <%= f.label :inquiery, "お問い合わせ内容" ,class:"label"%>
@@ -39,9 +50,8 @@
         </div>
         <div class="control">
           <%= f.text_area :inquiery, id: "inquiry_body", rows:"10", class:"is-invalid textarea is-info" %>
-          <div class="invalid-feedback">お問い合わせ内容を入力してください</div>
         </div>
-        <div class="field">
+        <div class="field-inquiery">
           <div class="control has-text-centered">
             <%= f.submit "送信", class:"button is-primary has-text-weight-bold", 'data-disable-with':"送信" %>
           </div>

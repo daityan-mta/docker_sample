@@ -7,7 +7,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <%# <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> %>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body>
@@ -15,7 +14,9 @@
       <nav class="navbar navbar-expand-md navbar-light" style="background-color: #fff;">
         <%=link_to(top_path, class: "navbar-brand mt-2") do %>
           <%= image_tag asset_path("modem rooter.jpg"), :width => '40', :height => '23' %>
+          <%= image_tag asset_path("rogo_title.jpg"), :width => '200'%>
         <% end %>
+        <%# <a href="https://ja.cooltext.com"><img src="https://images.cooltext.com/5554001.png" width="523" height="89" alt="Network Study" /></a> %>
         </a>
         <div class="collapse navbar-collapse collapse show" id="navbarSupportedContent" style>
           <ul class="navbar-nav mr-auto">
@@ -77,7 +78,7 @@
 
     <section class="container is-fluid bg-light" id="footer">
       <div class="column is-6 is-offset-3">
-        <p class="has-text-weight-medium has-text-centered">Copyright © VIMATE</p>
+        <p class="has-text-weight-medium has-text-centered">Copyright © Network Study</p>
         <div class="has-text-centered is-flex-tablet justify-content-center ml-4">
         <%= link_to "利用規約" , terms_path, class:"dropdown-item" %>
         <%= link_to "プライバシーポリシー" , privacy_path, class:"dropdown-item"%>

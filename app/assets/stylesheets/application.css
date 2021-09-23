@@ -3987,7 +3987,12 @@ a.tag:hover {
 }
 
 .field:not(:last-child) {
-  margin-bottom: .75rem
+  margin-bottom: .75rem;
+  margin-left: 6rem;
+}
+
+.field-inquiery:not(:last-child) {
+  margin-bottom: .75rem;
 }
 
 .field.has-addons {

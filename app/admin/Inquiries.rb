@@ -1,5 +1,5 @@
 ActiveAdmin.register Inquiry do
-  permit_params :genre, :name, :email, :inquiery
+  permit_params :genre, :name, :email, :inquiery, :image
 
   index do
     selectable_column
@@ -8,6 +8,7 @@ ActiveAdmin.register Inquiry do
     column :name
     column :email
     column :inquiery
+    column :image
     actions
   end
 
@@ -15,6 +16,7 @@ ActiveAdmin.register Inquiry do
   filter :name
   filter :email
   filter :inquiery
+  filter :image
 
   form do |f|
     f.inputs do
@@ -22,6 +24,7 @@ ActiveAdmin.register Inquiry do
       f.input :name
       f.input :email
       f.input :inquiery
+      f.input :image
     end
     f.actions
   end
