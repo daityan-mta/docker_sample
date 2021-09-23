@@ -1,4 +1,4 @@
-name: Rubocop
+name: Brakeman
 
 on:
   pull_request:
@@ -7,19 +7,19 @@ on:
       - main
 
 jobs:
-  rubocop:
-    name: rubocop
+  brakeman:
+    name: brakeman
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Ruby 2.6.3のセットアップ
+      - name: Ruby 2.7.4のセットアップ
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - name: rubocopを実行実行
+      - name: brakemanを実行実行
         run: |
-          bundle exec rubocop --extra-details --display-style-guide --parallel --display-cop-names
+          bundle exec brakeman -A

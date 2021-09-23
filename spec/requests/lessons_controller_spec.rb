@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe LessonsController, type: :request do
-
   describe "#index" do
     # 正常なレスポンスか？
     it "responds successfully" do
