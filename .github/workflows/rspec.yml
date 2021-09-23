@@ -51,6 +51,17 @@ jobs:
         with:
           ruby-version: 2.7.4
 
+      - name: gem install
+        run: |
+          gem install bundler -v 2.1.4
+      - name: bundler install
+        run: |
+          bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
+      - name: Setup Database
+        run: |
+          bundle exec rails db:create db:schema:load --trace
+
+
 
 
 

@@ -18,15 +18,26 @@ jobs:
       - name: Cache Gemfile.lock
         uses: actions/cache@v2
         with:
-        path: ./vendor/bundle
-        key: ${{ runner.os }}-rails-bundle-v1-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
+          path: ./vendor/bundle
+          key: ${{ runner.os }}-rails-bundle-v1-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
             ${{ runner.os }}-rails-bundle-v1-
 
       - name: Ruby 2.7.4のセットアップ
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.4
+
+      - name: gem install
+        run: |
+          gem install bundler -v 2.1.4
+      - name: bundler install
+        run: |
+          bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
+      - name: Setup Database
+        run: |
+          bundle exec rails db:create db:schema:load --trace
+
 
       - name: pg gem の依存関係のインストール
         run: |
