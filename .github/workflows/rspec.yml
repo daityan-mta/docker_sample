@@ -1,0 +1,48 @@
+name: RSpec
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      TZ: Asia/Tokyo
+      DB_NAME: myapp_test
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
+      DB_HOST: 127.0.0.1
+      RAILS_ENV: test
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Ruby 2.6.3のセットアップ
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Databaseのセットアップ
+        run: |
+          bundle exec rails db:create db:schema:load --trace
+      - name: RSpecを実行
+        run: |
+          bundle exec rspec --format documentation --force-color --backtrace
