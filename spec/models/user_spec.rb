@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
     end
 
     context "登録できない場合6" do
-      let(:user1) { create(:user, email: "testman@test", agreement: true) }
+      let!(:user1) { create(:user, email: "testman@test", agreement: true) }
 
       it "重複したemailが存在する場合登録できないこと" do
         user2 = described_class.create(name: "eee", agreement: true, email: "testman@test", password: "testtest",
