@@ -4,9 +4,7 @@ class LessonsController < ApplicationController
     @question = Question.all
   end
 
-  def new
-    # @lessons = Lesson.new
-  end
+  def new; end
 
   def create; end
 
@@ -21,19 +19,13 @@ class LessonsController < ApplicationController
 
   def update; end
 
-  def destroy
-    # @post = Post.find(params[:question_id])
-    # @like = Like.find_by(question_id: params[:question_id], user_id: current_user.id)
-    # @like.destroy
-    # @likeCounts = Like.where(question_id: params[:question_id])
-  end
+  def destroy; end
 
   def check
     @answered = choice_params[:answered]&.permit! || []
     @answered.push({ choice_id: choice_params[:choice_id], question_id: choice_params[:question_id] })
 
     answered_question_ids = @answered.pluck(:question_id)
-    p answered_question_ids
     question = Question.find(choice_params[:question_id])
     @correct_answer = question.choices.find_by(is_answer: true)
     @question = question.lesson.questions.where.not(id: answered_question_ids).sample

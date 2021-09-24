@@ -53,10 +53,12 @@ RSpec.describe UsersController, type: :request do
     end
 
     it "responds successfully" do
-      put edit_user_put_path(user.id), params: params
-      user.reload
-      expect(user.name).to eq "updated_name"
-      expect(user.introduction).to eq "更新されます"
+      aggregate_failures "最後まで通過" do
+        put edit_user_put_path(user.id), params: params
+        user.reload
+        expect(user.name).to eq "updated_name"
+        expect(user.introduction).to eq "更新されます"
+      end
     end
 
     it "returns a 302 response" do

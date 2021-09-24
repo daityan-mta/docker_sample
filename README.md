@@ -1,10 +1,10 @@
 # Network Study
 
 ## サービス概要
-①ネットワークに興味・関心がある人達
-②ネットワークエンジニアになるためにCCNAなどの資格取得に励んでいる人達
+①ネットワークに興味・関心がある人達  
+②ネットワークエンジニアになるためにCCNAなどの資格取得に励んでいる人達  
 ③資格は取得したがネットワークエンジニアとしては働いたことがない人達
-主にこれらの方達に向けた
+主にこれらの方達に向けた  
 ネットワークエンジニアのためのコアな学習サイトです！
 
 ## ユーザーが抱える課題
@@ -24,7 +24,4 @@
 https://xd.adobe.com/view/63c177c0-1dc8-4174-a374-29546c62c75b-3692
 
 ## ER図
-![VimateER図](https://user-images.githubusercontent.com/68991732/103157178-bc7f0c80-47f3-11eb-8318-06ebac3ee09e.png)
-
-## インフラ構成図
-![ViMateインフラ構成図](https://user-images.githubusercontent.com/68991732/103259945-f2ccaf80-49de-11eb-835d-70ca06660cf8.png)
+![Network StudyER図](https://drive.google.com/file/d/1OJzyoyxC8gSVzQmCPDX5yYBYZi_WpQyu/view?usp=sharing)
