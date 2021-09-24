@@ -20,10 +20,9 @@ RSpec.describe LessonsController, type: :request do
     let(:question) { create(:question, lesson_id: lesson.id) }
 
     it "responds successfully" do
-      aggregate_failures "最後まで通過" do
+      # aggregate_failures "最後まで通過" do
         get lesson_path(lesson.id)
         expect(response).to be_success
-      end
     end
 
     # 200レスポンスが返ってきているか？

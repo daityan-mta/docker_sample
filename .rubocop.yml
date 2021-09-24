@@ -105,9 +105,9 @@ Metrics/BlockLength:
     - "spec/models/**"
     - "app/admin/**"
 
-# メソッド名は100文字まで
+# メソッド名は80文字まで
 Metrics/MethodLength:
-  Max: 100
+  Max: 80
 
 # 循環複雑度は10がMax
 Metrics/CyclomaticComplexity:
