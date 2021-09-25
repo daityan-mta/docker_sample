@@ -51,6 +51,14 @@ RSpec/ContextWording:
 RSpec/NestedGroups:
   Max: 4
 
+# it do~endでテストする数
+RSpec/MultipleExpectations:
+  Max: 5
+
+# it do~end内の行数
+RSpec/ExampleLength:
+  Max: 10
+  
 ##### Bundler #####
 # Gemはアルファベット順に並べなくていい
 Bundler/OrderedGems:
@@ -102,10 +110,12 @@ Metrics/BlockLength:
     - "config/routes.rb"
     - "config/environments/**"
     - "spec/requests/**/**"
+    - "spec/models/**"
+    - "app/admin/**"
 
-# メソッド名は25文字まで
+# メソッド名は80文字まで
 Metrics/MethodLength:
-  Max: 25
+  Max: 80
 
 # 循環複雑度は10がMax
 Metrics/CyclomaticComplexity:
@@ -115,3 +125,4 @@ Metrics/CyclomaticComplexity:
 Metrics/AbcSize:
   Exclude:
     - "db/migrate/**.rb"
+  Max: 30 

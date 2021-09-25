@@ -1,2 +1,0 @@
-class UserLesson < ApplicationRecord
-end

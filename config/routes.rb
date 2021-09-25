@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "questions/index"
-  get "questions/show"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # 静的ページの設定
@@ -12,10 +10,11 @@ Rails.application.routes.draw do
   get "/", to: "top#index", as: "top"
   get "references/networks", to: "references#networks"
   get "references/jsons", to: "references#jsons"
-  get "lessons", to: "lessons#index", as: "lesson_index_path"
 
   # lessonsのパス設定
-  resources :lessons, only: [:show, :update, :new, :create]
+  get "lessons", to: "lessons#index", as: "lesson_index_path"
+  resources :lessons, only: [:show]
+  post "lessons/check", to: "lessons#check"
 
   # inquiriesのパス設定
   resources :inquiries, only: [:new, :create]
@@ -31,6 +30,4 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
-
-  post "lessons/check", to: "lessons#check"
 end
