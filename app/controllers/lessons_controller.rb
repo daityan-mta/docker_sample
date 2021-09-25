@@ -20,7 +20,7 @@ class LessonsController < ApplicationController
     @correct_answer = question.choices.find_by(is_answer: true)
     @question = question.lesson.questions.where.not(id: answered_question_ids).sample
     @choices = @question.choices.where(lesson_id: question.lesson_id).shuffle
-    choice = Choice.find(params[:choice_id])
+    choice = Choice.find(choice_params[:choice_id])
     @correctness = if choice.is_answer
                      "正解"
                    else
