@@ -22,7 +22,7 @@ RSpec.describe LessonsController, type: :request do
     it "responds successfully" do
       # aggregate_failures "最後まで通過" do
       get lesson_path(lesson.id)
-        expect(response).to be_success
+      expect(response).to be_success
     end
 
     # 200レスポンスが返ってきているか？
