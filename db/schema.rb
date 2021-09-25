@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_141854) do
+ActiveRecord::Schema.define(version: 2021_09_25_020628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,15 +41,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_141854) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "answers", force: :cascade do |t|
-    t.bigint "question_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
-  end
-
   create_table "choices", force: :cascade do |t|
     t.string "content"
     t.boolean "is_answer"
@@ -58,12 +49,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_141854) do
     t.datetime "updated_at", null: false
     t.string "image_path"
     t.integer "lesson_id"
-  end
-
-  create_table "helps", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -96,25 +81,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_141854) do
     t.integer "question_id"
   end
 
-  create_table "references", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tops", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_lessons", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "lesson_id"
-    t.string "answer_rate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -131,6 +97,4 @@ ActiveRecord::Schema.define(version: 2021_09_21_141854) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "answers", "users"
 end

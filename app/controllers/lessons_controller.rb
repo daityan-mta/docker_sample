@@ -4,22 +4,12 @@ class LessonsController < ApplicationController
     @question = Question.all
   end
 
-  def new; end
-
-  def create; end
-
   def show
     @question = Question.where(lesson_id: params[:id]).sample
     @lesson = Lesson.find_by(id: params[:id])
     @choices = @question.choices.where(lesson_id: @lesson.id).shuffle
     @answered = []
   end
-
-  def edit; end
-
-  def update; end
-
-  def destroy; end
 
   def check
     @answered = choice_params[:answered]&.permit! || []
