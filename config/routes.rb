@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/", to: "top#index", as: "top"
   get "references/networks", to: "references#networks"
   get "references/jsons", to: "references#jsons"
-  
+
   # lessonsのパス設定
   get "lessons", to: "lessons#index", as: "lesson_index_path"
   resources :lessons, only: [:show]
@@ -30,5 +30,4 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
-
 end
