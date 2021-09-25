@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_25_020628) do
+ActiveRecord::Schema.define(version: 2021_08_18_130506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 2021_09_25_020628) do
     t.string "content"
     t.boolean "is_answer"
     t.integer "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "image_path"
     t.integer "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -56,29 +56,30 @@ ActiveRecord::Schema.define(version: 2021_09_25_020628) do
     t.string "name"
     t.string "email"
     t.string "inquiery", null: false
+    t.string "image_id"
+    t.boolean "agreement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "agreement"
-    t.string "image_id"
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
     t.string "genre"
     t.string "introduce"
     t.string "image_name"
     t.string "reference"
     t.string "path"
     t.string "reference_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "lesson_id"
     t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
