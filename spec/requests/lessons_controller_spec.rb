@@ -17,7 +17,8 @@ RSpec.describe LessonsController, type: :request do
 
   describe "#show" do
     let(:lesson) { create(:lesson) }
-    let!(:question) { create(:question, lesson_id: lesson.id) }
+
+    before { create(:question, lesson_id: lesson.id) }
 
     it "responds successfully" do
       # aggregate_failures "最後まで通過" do

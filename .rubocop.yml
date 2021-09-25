@@ -51,6 +51,14 @@ RSpec/ContextWording:
 RSpec/NestedGroups:
   Max: 4
 
+# it do~endでテストする数
+RSpec/MultipleExpectations:
+  Max: 5
+
+# it do~end内の行数
+RSpec/ExampleLength:
+  Max: 10
+  
 ##### Bundler #####
 # Gemはアルファベット順に並べなくていい
 Bundler/OrderedGems:
