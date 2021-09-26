@@ -8,7 +8,7 @@ gem "rails", "5.2.6"
 # Use postgresql as the database for Active Record
 gem "pg"
 # Use Puma as the app server
-gem "puma"
+gem "puma", ">= 4.3.8"
 # Use SCSS for stylesheets
 gem "sass-rails"
 # Use Uglifier as compressor for JavaScript assets
@@ -77,7 +77,7 @@ gem "refile-mini_magick"
 gem "carrierwave"
 gem "jquery-rails"
 gem "pry-rails"
-gem "bootstrap"
+gem "bootstrap", ">= 4.3.1"
 gem "activeadmin"
 gem "seed-fu"
 gem "rails-i18n"
