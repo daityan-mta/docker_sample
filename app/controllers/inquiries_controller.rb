@@ -6,10 +6,10 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_param)
     if @inquiry.save
-      flash[:notice] = '投稿が完了しました'
-      redirect_to top_path, notice: '投稿が完了しました'
+      flash[:notice] = "投稿が完了しました"
+      redirect_to top_path, notice: "投稿が完了しました"
     else
-      flash[:notice] = '投稿に失敗しました'
+      flash[:notice] = "投稿に失敗しました"
       render :new
     end
   end

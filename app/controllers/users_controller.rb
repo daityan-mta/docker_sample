@@ -12,10 +12,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = 'ユーザーを更新しました'
+      flash[:notice] = "ユーザーを更新しました"
       redirect_to :edit_user_get
     else
-      flash[:notice] = 'ユーザーを更新できませんでした'
+      flash[:notice] = "ユーザーを更新できませんでした"
       render :edit
     end
   end
