@@ -22,9 +22,9 @@ class LessonsController < ApplicationController
     @choices = @question.choices.where(lesson_id: question.lesson_id).shuffle
     choice = Choice.find(choice_params[:choice_id])
     @correctness = if choice.is_answer
-                     "正解"
+                     '正解'
                    else
-                     "不正解"
+                     '不正解'
                    end
   end
 
