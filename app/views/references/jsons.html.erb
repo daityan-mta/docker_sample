@@ -65,7 +65,15 @@
             "id": 1
           }</xmp>
           </td>
-          <td class="has-text-weight-semibold"><br><br><br><br><br><br>「host」はホスト名のことをさす。「filter」は「ホスト名」の"Zabbix server"・"Linux server"の両方のデータが抽出されるようになるということである。「auth」は認証キーのことを指し、「id」は識別子のことでどんな数字でもOK。</td>
+          <td class="has-text-weight-semibold"><xmp>
+          「host」はホスト名のことをさす。
+
+          「filter」は「ホスト名」の
+          "Zabbix server"・"Linux server"の両方
+          のデータが抽出されるようになるということ。
+
+          「auth」は認証キーのことを指し、
+          「id」は識別子のことでどんな数字でもOK。</xmp></td>
         </tr>
         </tbody>
         <tbody>
@@ -87,71 +95,23 @@
             ee9eae095879e",
             "id": 1
         }</xmp></td>
-          <td class="has-text-weight-semibold"><br>「"output": "extend"」・・・返されたオブジェクトプロパティを出力するということを指します。<br>
-          "select_acknowledges": "extend"・・・select_acknowledgesとは「acknowledgesイベント」の更新時にプロパティを返すということです。<br>
-          "selectTags": "extend"・・・selectTagsとはtagsイベントタグ付きのプロパティを返します。<br>
-          "sortfield": ["clock", "eventid"]・・・sortfieldとは任意の値によって結果を選別することを指す。
-          "sortorder": "DESC"・・・DESCは下降（descent）のこと。返ってきた結果の値によって変わる。</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
-        </tr>
-        </tbody>
-        <tbody>
-        <tr>
-          <td class="has-text-weight-semibold">上にカーソル移動</td>
-          <td class="has-text-weight-semibold">k</td>
+          <td class="has-text-weight-semibold"><xmp>
+          「"output": "extend"」・・・
+          返されたオブジェクトプロパティを出力するという
+          ことを指します。
+
+          "select_acknowledges": "extend"・・・
+          select_acknowledgesとは「acknowledgesイベント」の
+          更新時にプロパティを返すということです。
+
+          "selectTags": "extend"・・・
+          selectTagsとはtagsイベントタグ付きのプロパティを返します。
+
+          "sortfield": ["clock", "eventid"]・・・
+          sortfieldとは任意の値によって結果を選別することを指す。
+
+          "sortorder": "DESC"・・・
+          DESCは下降（descent）のこと。返ってきた結果の値によって変わる。</xmp></td>
         </tr>
         </tbody>
       </table>
@@ -159,12 +119,13 @@
   </div>
   <div class="row">
     <div class="column is-6 is-offset-3 has-text-centered">
-      <a class="button is-primary is-outlined is-rounded text-decoration-none" data-turbolinks="false" href="/lessons/network-02/exam">
+      <%= link_to(lesson_path(2), class: "button is-primary is-outlined is-rounded text-decoration-none", turbolinks:false) do %>
         <span class="mr-1">
           <svg class="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
             <path fill="currentColor" d="M48 32h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48zm140.485 355.515l123.029-123.029c4.686-4.686 4.686-12.284 0-16.971l-123.029-123.03c-7.56-7.56-20.485-2.206-20.485 8.485v246.059c0 10.691 12.926 16.045 20.485 8.486z"></path>
-          </svg><!-- <i class="fas fa-caret-square-right"></i> Font Awesome fontawesome.com -->
-        </span>Vim中級編はこちら
+          </svg>
+        </span>レッスンはこちら
+      <% end %>
       </a>
     </div>
   </div>

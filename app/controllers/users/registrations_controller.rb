@@ -3,10 +3,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  skip_before_action :verify_authenticity_token, only: :create
 
   # GET /resource/sign_up
   # def new
-  #   super
+  #   # super
   # end
 
   # POST /resource

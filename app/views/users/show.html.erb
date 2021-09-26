@@ -1,52 +1,47 @@
 <div class="container-fiuld user"> 
-    <div class="row">
-        <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
-    <ul>
-        <li class="active"><a href="/users/account">アカウント</a></li>
-        <li class=""><a href="/users">プロフィール</a></li>
-    </ul>
-</div>
-<div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
-    <ul>
-        <li class="active"><a href="/users/account">アカウント</a></li>
-        <li class=""><a href="/users">プロフィール</a></li>
-    </ul>
-</div>
-        <div class="col-md-10 user-view">
-            <div class="user-view-box">
-                <div class="update-content">
-                    <div class="row">
-                        <h5>アカウント</h5>
-                    </div>
-                </div>
-                <div class="update-content">
-                    <div class="row">
-                        <label class="col-md-3" for="email">メールアドレス</label>
-                        <div class="col-md-9">aaa@aaaeeeeee</div>
-                    </div>
-                </div>
-                <div class="update-content">
-                    <div class="row">
-                        <a class="col-md-2 btn btn-primary mx-3" href="/users/edit">アカウント編集</a>
-                    </div>
-                </div>
-
-                <h1>ユーザー詳細ページ</h1>
-                <h3><%= @user.email %></h3>
-                <h2>投稿内容</h2>
-                <% @user.questions.each do |post| %>
-                    <a href="/quetions/<%= post.id %>"><%= post.content %></a>
-                    <hr>
-                <% end %>
-                <h3>いいねしている投稿</h3>
-                <% @user.answered_questions.each do |post| %>
-                    <%= post.user.email %>
-                    <%= post.content %>
-                <% end %>
-                <%= link_to "ユーザー一覧へ", users_path %>
-                <%= link_to "ホームへ戻る", questions_path %>
-
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active">
+          <%= link_to("アカウント", show_users_path) %>
+          <%# <a href="/users/account/">アカウント</a> %>
+        </li>
+        <li class="">
+          <%= link_to("プロフィール", show_users_path) %>
+        </li>
+      </ul>
     </div>
+    <div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
+      <ul>
+        <li class="active">
+          <%= link_to("アカウント", show_users_path) %>
+          <%# <a href="/users/account">アカウント</a> %>
+        </li>
+        <li class="">
+          <%= link_to("プロフィール", show_users_path) %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="email">メールアドレス</label>
+            <div class="col-md-9"><%= @user.email%>
+            </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <a class="col-md-2 btn btn-primary mx-3" href="/users/edit">アカウント編集</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -4,7 +4,8 @@ class CreateChoices < ActiveRecord::Migration[5.2]
       t.string :content
       t.boolean :is_answer
       t.integer :question_id
-
+      t.string :image_path
+      t.integer :lesson_id
       t.timestamps
     end
   end

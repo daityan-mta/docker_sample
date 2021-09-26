@@ -5,6 +5,8 @@ class CreateInquiries < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :email
       t.string :inquiery, null: false
+      t.string :image_id
+      t.boolean :agreement
       t.timestamps
     end
   end

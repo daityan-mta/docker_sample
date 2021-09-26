@@ -1,39 +1,28 @@
 class UsersController < ApplicationController
-  def index
-    @user = current_user
-    @users = User.all
-  end
-  
-  def new
-  end
-
-  def create
-  end
+  before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
   end
 
   def edit
+    @user = current_user
   end
 
   def update
-    if current_user.update!(params.require(:user).permit(:name,:introduction,:image))
+    @user = User.find(params[:id])
+    if @user.update(user_params)
       flash[:notice] = "ユーザーを更新しました"
-      redirect_to :users
+      redirect_to :edit_user_get
     else
-      render "new"
+      flash[:notice] = "ユーザーを更新できませんでした"
+      render :edit
     end
   end
 
-  def destroy
-  end
+  private
 
-  def account
+  def user_params
+    params.require(:user).permit(:name, :introduction, :image)
   end
-
-  def profile
-    @users = User.new
-  end
-
 end

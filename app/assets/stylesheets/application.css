@@ -3987,7 +3987,12 @@ a.tag:hover {
 }
 
 .field:not(:last-child) {
-  margin-bottom: .75rem
+  margin-bottom: .75rem;
+  margin-left: 6rem;
+}
+
+.field-inquiery:not(:last-child) {
+  margin-bottom: .75rem;
 }
 
 .field.has-addons {
@@ -4357,7 +4362,7 @@ a.tag:hover {
 }
 
 .card-content {
-  padding: 1.5rem
+  padding: 1.5rem;
 }
 
 .card-content,.card-footer {
@@ -12358,7 +12363,7 @@ pre code {
 
   .col-md-3 {
       flex: 0 0 25%;
-      max-width: 25%
+      /* max-width: 25% */
   }
 
   .col-md-4 {
@@ -27577,4 +27582,24 @@ button.toast-close-button {
   font-family: MPLUS1p-Regular
 }
 
+.notice {
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
 
+
+.alert {
+	text-align: center;
+}
+.alert-info {
+    background-color: #bde9ff;
+    border-color: #bde9ff;
+    color: #4c6977;
+}
+ 
+.alert-danger {
+    background-color: #f3c0c0;
+    border-color: #f3c0c0;
+    color: #3e3a3a;
+}

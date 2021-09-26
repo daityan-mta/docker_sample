@@ -1,5 +1,4 @@
 class Answer < ApplicationRecord
-  # belongs_to :question
   belongs_to :user
-  validates_uniqueness_of :question_id, scope: :user_id
+  validates :question_id, uniqueness: { scope: :user_id }
 end

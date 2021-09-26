@@ -1,3 +1,13 @@
 // Place all the styles related to the Inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.devise-error-messages {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#inquiry_body{
+  margin-bottom: 20px;
+}

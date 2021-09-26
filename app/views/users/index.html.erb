@@ -2,13 +2,26 @@
   <div class="row">
     <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
       <ul>
-        <li class=""><a href="/users/account">アカウント</a></li>
-        <li class="active"><a href="/users">プロフィール</a></li>
+        <li class="">
+          <%=link_to(show_users_path(@user.id)) do %>
+          <%# <%= link_to("アカウント", "/users/account/#{@user.id}") %>
+          <%# <a href="/users/account/:id">アカウント</a> %>
+          アカウント
+          <% end %>
+        </li>
+        <li class="active">
+          <a href="/users">プロフィール</a>
+        </li>
       </ul>
     </div>
     <div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
       <ul>
-        <li class=""><%= link_to "アカウント", show_users_path %></li>
+        <li class="">
+          <%=link_to(show_users_path(@user.id)) do %>
+          <%# <%= link_to("アカウント", "/users/account") %>
+          アカウント
+          <% end %>
+        </li>
         <%# <li class=""><a href="/users/account">アカウント</a></li> %>
         <li class="active">
           <a href="/users">プロフィール</a>
@@ -19,11 +32,10 @@
       <div class="user-view-box">
         <div class="update-content">
           <div class="row">
-            <h5>プロフィール</h5>
           </div>
         </div>
-        <%= form_for @user, url: users_path, methods: :patch do |f| %>
-        <form class="edit_user" id="edit_user_744" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post">
+        <%= form_for @user, url: users_index_path(current_user.id), methods: :patch do |f| %>
+        <%# <form class="edit_user" id="edit_user_744" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post"> %>
           <input type="hidden" name="_method" value="patch">
           <input type="hidden" name="authenticity_token" value="8iI4iI6VCVKGx0/eBrB6Xq5n5wDh2Xlly7YQE4zzdBLYcp3icK49pZ9YiZlvSbeUBiXFukAuLwcaGwp/vQNZkw==">
           <div class="update-content">
@@ -67,19 +79,9 @@
             <div class="row">
               <%= f.submit "更新" ,class:"col-md-2 btn btn-primary mx-3"%>
               <%# <input type="submit" name="commit" value="更新" class="col-md-2 btn btn-primary mx-3" data-disable-with="更新"> %>
-                  <% end %>
             </div>
-
-            <h1>ユーザー一覧</h1>
-            <% @users.each do |user| %>
-              <a href="/users/<%= user.id %>"><%= user.email %></a>
-              <hr>
-            <% end %>
-            <%= link_to "ホームへ戻る", lessons_path %>
-
-
-          </div>
-        </form>            
+          </div>          
+        <% end %>
       </div>
     </div>
   </div>
