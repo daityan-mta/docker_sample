@@ -34,7 +34,7 @@ test:
 #
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
+  database: network_study_app_production
+  username: postgres
   password: <%= Rails.application.credentials.db[:password] %>
   host: <%= Rails.application.credentials.db[:hostname] %>
