@@ -1,5 +1,5 @@
 FROM ruby:2.7.4
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y vim nodejs postgresql-client
 RUN mkdir /myapp
 WORKDIR /myapp
 RUN gem update --system && gem install bundler:2.2.27

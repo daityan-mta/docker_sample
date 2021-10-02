@@ -57,6 +57,15 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen"
   gem "overcommit"
+
+  # 略
+  # ***** 以下を追加 *****
+  gem "capistrano", require: false
+  gem "capistrano-rails", require: false
+  gem "capistrano-rbenv"
+  gem "capistrano-rbenv-vars"
+  gem "capistrano3-puma"
+  # ***** 以上を追加 *****
 end
 
 group :test do
