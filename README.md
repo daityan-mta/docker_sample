@@ -21,12 +21,12 @@
 ネットワーク学習サイト。クイズ形式でネットワークについて学ぶことができます。　　
 
 ## 使用技術
-・ Ruby 2.7.4
-・ ruby on Rails 5.2.6
-・ Postgres
-・ Docker/Docker-compose
-・ github actions
-・ RSpec
+・ Ruby 2.7.4<br>
+・ ruby on Rails 5.2.6<br>
+・ Postgres<br>
+・ Docker/Docker-compose<br>
+・ github actions<br>
+・ RSpec<br>
 
 ## 動画で簡単に内容紹介
 ![Network Study_動画紹介](https://user-images.githubusercontent.com/81090762/134760224-4574ae85-5f93-430d-883c-a4f9d76d6436.gif)
