@@ -25,7 +25,7 @@
 ・ ruby on Rails 5.2.6<br>
 ・ Postgres<br>
 ・ Docker/Docker-compose<br>
-・ github actions<br>
+・ github actions(CI/CD)<br>
 ・ RSpec<br>
 
 ## 動画で簡単に内容紹介
