@@ -23,7 +23,7 @@
 ## 使用技術
 ・ Ruby 2.7.4<br>
 ・ ruby on Rails 5.2.6<br>
-・ Postgres<br>
+・ Postgres 13.3<br>
 ・ Docker/Docker-compose<br>
 ・ github actions(CI/CD)<br>
 ・ RSpec<br>
