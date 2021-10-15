@@ -1,5 +1,11 @@
 # Network Study
 
+## 動画で簡単に内容紹介
+![Network Study_動画紹介](https://user-images.githubusercontent.com/81090762/134760224-4574ae85-5f93-430d-883c-a4f9d76d6436.gif)
+
+## ER図
+![Network Study_ER図](https://user-images.githubusercontent.com/81090762/134759800-9adc4dc9-4cbc-44b4-abe4-84e372467a8e.png)
+
 ## サービス概要
 ①ネットワークに興味・関心がある人達<br>
 ②ネットワークエンジニアになるためにCCNAなどの資格取得に励んでいる人達<br>
@@ -28,8 +34,4 @@
 ・ github actions(CI/CD)<br>
 ・ RSpec<br>
 
-## 動画で簡単に内容紹介
-![Network Study_動画紹介](https://user-images.githubusercontent.com/81090762/134760224-4574ae85-5f93-430d-883c-a4f9d76d6436.gif)
 
-## ER図
-![Network Study_ER図](https://user-images.githubusercontent.com/81090762/134759800-9adc4dc9-4cbc-44b4-abe4-84e372467a8e.png)
